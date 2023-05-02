@@ -1,0 +1,8 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_videoindexer-v2",
+    "Name": "VideoIndexer(V2)_1",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo"
+  }
+]
