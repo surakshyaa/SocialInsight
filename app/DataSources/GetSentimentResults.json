@@ -1,0 +1,8 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_getsentimentresults-5fa03598a9320f38aa-5f15dbda3abd7d3151",
+    "Name": "GetSentimentResults",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo"
+  }
+]

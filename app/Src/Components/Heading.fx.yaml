@@ -1,0 +1,32 @@
+Heading As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =80
+    Width: =Max(App.Width, App.MinScreenWidth)
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Label2_2 As label:
+        Align: =Align.Right
+        Font: =Font.Georgia
+        FontWeight: =FontWeight.Bold
+        Height: =52
+        Size: =24
+        Text: ="Social"
+        Width: =121
+        X: =10
+        Y: =15
+        ZIndex: =1
+
+    Label2_3 As label:
+        Color: =RGBA(255, 191, 0, 1)
+        Font: =Font.Georgia
+        FontWeight: =FontWeight.Bold
+        Height: =52
+        Size: =24
+        Text: ="Insight"
+        Width: =170
+        X: =121
+        Y: =15
+        ZIndex: =2
+

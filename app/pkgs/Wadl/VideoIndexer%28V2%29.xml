@@ -1,0 +1,1327 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://msmanaged-na.azure-apim.net/apim/videoindexer-v2" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="VideoIndexer(V2)" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="Video Indexer (V2)">Easily extract insights from your videos and quickly enrich your applications to enhance discovery and engagement. Use the Video Indexer connector to turn your videos into insights.</doc>
+  <grammars>
+    <jsonTypes targetNamespace="https://msmanaged-na.azure-apim.net/apim/videoindexer-v2" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <string name="tokenResponse" />
+      <array typeRef="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2" name="Microsoft_VideoIndexer_Common_ContractsV2_PlaylistSearchResultV2_results_def" />
+      <object name="Microsoft_VideoIndexer_Common_ContractsV2_PlaylistSearchResultV2">
+        <property name="results" typeRef="Microsoft_VideoIndexer_Common_ContractsV2_PlaylistSearchResultV2_results_def" />
+        <property name="nextPage" typeRef="Microsoft_VideoIndexer_Common_ContractsV2_SearchPage" />
+      </object>
+      <string name="UploadResponse_id_def" />
+      <object name="UploadResponse">
+        <property name="id" type="string" />
+      </object>
+      <string name="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_accountId_def" />
+      <string name="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_id_def" />
+      <string name="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_partition_def" />
+      <string name="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_externalId_def" />
+      <string name="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_metadata_def" />
+      <string name="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_name_def" />
+      <string name="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_description_def" />
+      <dateTimeString name="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_created_def" />
+      <dateTimeString name="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_lastModified_def" />
+      <dateTimeString name="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_lastIndexed_def" />
+      <string name="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_privacyMode_def" />
+      <string name="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_userName_def" />
+      <boolean name="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_isOwned_def" />
+      <boolean name="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_isBase_def" />
+      <string name="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_state_def" />
+      <string name="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_processingProgress_def" />
+      <integer name="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_durationInSeconds_def" />
+      <string name="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_thumbnailVideoId_def" />
+      <string name="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_thumbnailId_def" />
+      <string name="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_indexingPreset_def" />
+      <string name="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_streamingPreset_def" />
+      <string name="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_sourceLanguage_def" />
+      <object name="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2">
+        <property name="accountId" type="string" />
+        <property name="id" type="string" />
+        <property name="partition" type="string" />
+        <property name="externalId" type="string" />
+        <property name="metadata" type="string" />
+        <property name="name" type="string" />
+        <property name="description" type="string" />
+        <property name="created" typeRef="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_created_def" />
+        <property name="lastModified" typeRef="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_lastModified_def" />
+        <property name="lastIndexed" typeRef="Microsoft_VideoIndexer_Common_ContractsV2_SinglePlaylistSearchResultV2_lastIndexed_def" />
+        <property name="privacyMode" type="string" />
+        <property name="userName" type="string" />
+        <property name="isOwned" type="boolean" />
+        <property name="isBase" type="boolean" />
+        <property name="state" type="string" />
+        <property name="processingProgress" type="string" />
+        <property name="durationInSeconds" type="integer" />
+        <property name="thumbnailVideoId" type="string" />
+        <property name="thumbnailId" type="string" />
+        <property name="indexingPreset" type="string" />
+        <property name="streamingPreset" type="string" />
+        <property name="sourceLanguage" type="string" />
+      </object>
+      <integer name="Microsoft_VideoIndexer_Common_ContractsV2_SearchPage_pageSize_def" />
+      <integer name="Microsoft_VideoIndexer_Common_ContractsV2_SearchPage_skip_def" />
+      <boolean name="Microsoft_VideoIndexer_Common_ContractsV2_SearchPage_done_def" />
+      <object name="Microsoft_VideoIndexer_Common_ContractsV2_SearchPage">
+        <property name="pageSize" type="integer" />
+        <property name="skip" type="integer" />
+        <property name="done" type="boolean" />
+      </object>
+      <string name="GetIndexResponse_accountId_def" />
+      <string name="GetIndexResponse_id_def" />
+      <string name="GetIndexResponse_partition_def" />
+      <string name="GetIndexResponse_name_def" />
+      <string name="GetIndexResponse_description_def" />
+      <string name="GetIndexResponse_userName_def" />
+      <dateTimeString name="GetIndexResponse_created_def" />
+      <string name="GetIndexResponse_privacyMode_def" />
+      <string name="GetIndexResponse_state_def" />
+      <boolean name="GetIndexResponse_isOwned_def" />
+      <boolean name="GetIndexResponse_isEditable_def" />
+      <boolean name="GetIndexResponse_isBase_def" />
+      <integer name="GetIndexResponse_durationInSeconds_def" />
+      <object name="GetIndexResponse_summarizedInsights_def" />
+      <object name="GetIndexResponse_videos_def_items_def" />
+      <array typeRef="GetIndexResponse_videos_def_items_def" name="GetIndexResponse_videos_def" />
+      <object name="GetIndexResponse">
+        <property name="accountId" type="string" />
+        <property name="id" type="string" />
+        <property name="partition" type="string" />
+        <property name="name" type="string" />
+        <property name="description" type="string" />
+        <property name="userName" type="string" />
+        <property name="created" typeRef="GetIndexResponse_created_def" />
+        <property name="privacyMode" type="string" />
+        <property name="state" type="string" />
+        <property name="isOwned" type="boolean" />
+        <property name="isEditable" type="boolean" />
+        <property name="isBase" type="boolean" />
+        <property name="durationInSeconds" type="integer" />
+        <property name="summarizedInsights" typeRef="GetIndexResponse_summarizedInsights_def" />
+        <property name="videos" typeRef="GetIndexResponse_videos_def" />
+      </object>
+      <string name="Microsoft_VideoIndexer_Common_ContractsV2_AccountContractSlim_id_def" />
+      <string name="Microsoft_VideoIndexer_Common_ContractsV2_AccountContractSlim_name_def" />
+      <string name="Microsoft_VideoIndexer_Common_ContractsV2_AccountContractSlim_location_def" />
+      <string name="Microsoft_VideoIndexer_Common_ContractsV2_AccountContractSlim_accountType_def" />
+      <string name="Microsoft_VideoIndexer_Common_ContractsV2_AccountContractSlim_url_def" />
+      <object name="Microsoft_VideoIndexer_Common_ContractsV2_AccountContractSlim">
+        <property name="id" type="string" />
+        <property name="name" type="string" />
+        <property name="location" type="string" />
+        <property name="accountType" type="string" />
+        <property name="url" type="string" />
+      </object>
+      <array typeRef="Microsoft_VideoIndexer_Common_ContractsV2_AccountContractSlim" name="Get-Accounts_responses_200_def" />
+      <string name="Get-video-id-by-external-id_responses_200_def" />
+      <string name="Get-video-captions_responses_200_def" />
+      <string name="Get-thumbnail_responses_200_def" />
+      <string name="Update-Transcript_param_content_def" />
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://msmanaged-na.azure-apim.net/apim/videoindexer-v2">
+    <resource path="/{connectionId}/auth/{location}/Accounts/{accountId}/AccessToken">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="location" type="xs:string" required="true">
+        <doc title="Indicates the Azure region to which the call should be routed." />
+        <option value="trial" />
+        <option value="eastus" />
+        <option value="westus2" />
+        <option value="eastasia" />
+        <option value="northeurope" />
+        <option value="westeurope" />
+        <option value="southeastasia" />
+        <option value="eastus2" />
+        <option value="australiaeast" />
+        <option value="southcentralus" />
+        <option value="japaneast" />
+        <option value="uksouth" />
+        <option value="switzerlandnorth" />
+        <option value="switzerlandwest" />
+        <option value="centralindia" />
+        <option value="canadacentral" />
+        <option value="westus" />
+        <option value="northcentralus" />
+        <option value="francecentral" />
+        <option value="centralus" />
+        <option value="koreacentral" />
+        <option value="brazilsouth" />
+        <option value="japanwest" />
+        <option value="westcentralus" />
+      </param>
+      <param style="template" name="accountId" type="xs:string" required="true">
+        <doc title="Account ID is a globally unique identifier (GUID) for the account." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="GetAccountAccessToken" actionName="Get-Account-Access-Token" siena:isDeprecated="false">
+        <doc title="Get Account Access Token&#xA;Gets an account access token (expires after an hour)." />
+        <request>
+          <param style="query" name="allowEdit" type="xs:boolean" required="true" default="false">
+            <doc title="Determines whether the token has write permissions." />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="xs:string" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/auth/Trial/Accounts">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="GetAccounts" actionName="Get-Accounts" siena:isDeprecated="false">
+        <doc title="Get Accounts&#xA;This operation returns the details of the user's accounts." />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:Get-Accounts_responses_200_def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/{location}/Accounts/{accountId}/Videos">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="location" type="xs:string" required="true">
+        <doc title="Indicates the Azure region to which the call should be routed." />
+        <option value="trial" />
+        <option value="eastus" />
+        <option value="westus2" />
+        <option value="eastasia" />
+        <option value="northeurope" />
+        <option value="westeurope" />
+        <option value="southeastasia" />
+        <option value="eastus2" />
+        <option value="australiaeast" />
+        <option value="southcentralus" />
+        <option value="japaneast" />
+        <option value="uksouth" />
+        <option value="switzerlandnorth" />
+        <option value="switzerlandwest" />
+        <option value="centralindia" />
+        <option value="canadacentral" />
+        <option value="westus" />
+        <option value="northcentralus" />
+        <option value="francecentral" />
+        <option value="centralus" />
+        <option value="koreacentral" />
+        <option value="brazilsouth" />
+        <option value="japanwest" />
+        <option value="westcentralus" />
+      </param>
+      <param style="template" name="accountId" type="xs:string" required="true">
+        <doc title="Account ID is a globally unique identifier (GUID) for the account." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="Listvideos" actionName="List-videos" siena:isDeprecated="false">
+        <doc title="List Videos&#xA;This operation gets a list of all videos in the account." />
+        <request>
+          <param style="query" name="accessToken" type="xs:string" required="true">
+            <doc title="An account access token with read permissions." />
+          </param>
+          <param style="query" name="pageSize" type="xs:long">
+            <doc title="The number of results to return." />
+          </param>
+          <param style="query" name="skip" type="xs:long">
+            <doc title="The number of pages to skip." />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:Microsoft_VideoIndexer_Common_ContractsV2_PlaylistSearchResultV2" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/{location}/Accounts/{accountId}/Videos">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="location" type="xs:string" required="true">
+        <doc title="Indicates the Azure region to which the call should be routed." />
+        <option value="trial" />
+        <option value="eastus" />
+        <option value="westus2" />
+        <option value="eastasia" />
+        <option value="northeurope" />
+        <option value="westeurope" />
+        <option value="southeastasia" />
+        <option value="eastus2" />
+        <option value="australiaeast" />
+        <option value="southcentralus" />
+        <option value="japaneast" />
+        <option value="uksouth" />
+        <option value="switzerlandnorth" />
+        <option value="switzerlandwest" />
+        <option value="centralindia" />
+        <option value="canadacentral" />
+        <option value="westus" />
+        <option value="northcentralus" />
+        <option value="francecentral" />
+        <option value="centralus" />
+        <option value="koreacentral" />
+        <option value="brazilsouth" />
+        <option value="japanwest" />
+        <option value="westcentralus" />
+      </param>
+      <param style="template" name="accountId" type="xs:string" required="true">
+        <doc title="Account ID is a globally unique identifier (GUID) for the account." />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="Uploadvideo" actionName="Upload-video" siena:isDeprecated="false">
+        <doc title="Upload video and index&#xA;This operation uploads the given video, starts indexing it, and returns a new video index ID.&#xA;The supported formats are listed here:&#xA;https://docs.microsoft.com/azure/media-services/media-services-media-encoder-standard-formats)." />
+        <request>
+          <param style="query" name="accessToken" type="xs:string" required="true">
+            <doc title="An account access token with write permissions." />
+          </param>
+          <param style="query" name="name" type="xs:string" required="true">
+            <doc title="The title of the video." />
+          </param>
+          <param style="query" name="description" type="xs:string">
+            <doc title="The video description." />
+          </param>
+          <param style="query" name="partition" type="xs:string">
+            <doc title="A partition to search videos by." />
+          </param>
+          <param style="query" name="externalId" type="xs:string">
+            <doc title="An external ID (associated with the video at upload)." />
+          </param>
+          <param style="query" name="callbackUrl" type="xs:string">
+            <doc title="A URL to notify when indexing is complete.&#xA;It should be a POST URL and Video Indexer will add 2 additional query string parameters to it: ID and state." />
+          </param>
+          <param style="query" name="metadata" type="xs:string">
+            <doc title="Metadata to associate with the video (will be returned in queries)." />
+          </param>
+          <param style="query" name="language" type="xs:string">
+            <doc title="The video language, used when generating the transcript." />
+            <option value="Auto" />
+            <option value="English" />
+            <option value="Spanish" />
+            <option value="Russian" />
+            <option value="Japanese" />
+            <option value="German" />
+            <option value="French" />
+            <option value="Portuguese" />
+            <option value="Italian" />
+            <option value="Chinese" />
+            <option value="Arabic" />
+            <option value="ar-EG" />
+            <option value="de-DE" />
+            <option value="en-US" />
+            <option value="es-ES" />
+            <option value="fr-FR" />
+            <option value="hi-IN" />
+            <option value="it-IT" />
+            <option value="ja-JP" />
+            <option value="ko-KR" />
+            <option value="pt-BR" />
+            <option value="ru-RU" />
+            <option value="zh-Hans" />
+          </param>
+          <param style="query" name="videoUrl" type="xs:string">
+            <doc title="A public URL of the video/audio file (URL encoded). If not specified, the file should be passed as a multipart/form body content." />
+          </param>
+          <param style="query" name="fileName" type="xs:string">
+            <doc title="The uploaded file name." />
+          </param>
+          <param style="query" name="indexingPreset" type="xs:string">
+            <doc title="The indexing preset to use." />
+            <option value="Default" />
+            <option value="AudioOnly" />
+            <option value="DefaultWithNoiseReduction" />
+            <option value="VideoOnly" />
+          </param>
+          <param style="query" name="streamingPreset" type="xs:string">
+            <doc title="The streaming preset to use." />
+            <option value="Default" />
+            <option value="SingleBitrate" />
+            <option value="AdaptiveBitrate" />
+            <option value="NoStreaming" />
+          </param>
+          <param style="query" name="linguisticModelId" type="xs:string">
+            <doc title="Linguistic model ID as received by 'create linguistic model' call." />
+          </param>
+          <param style="query" name="privacy" type="xs:string">
+            <doc title="The video privacy." />
+            <option value="Private" />
+            <option value="Public" />
+          </param>
+          <param style="query" name="externalUrl" type="xs:string">
+            <doc title="An external URL to associate with the video (can be searched for later)." />
+          </param>
+          <param style="query" name="assetId" type="xs:string">
+            <doc title="Azure media services asset id. Used to index from existing assets in your connected Azure media services account. (Paid only)." />
+          </param>
+          <param style="query" name="priority" type="xs:string">
+            <doc title="Index priority (Low, Normal and High). Can be used in paid regions only." />
+            <option value="Low" />
+            <option value="Normal" />
+            <option value="High" />
+          </param>
+          <param style="query" name="brandsCategories" type="xs:string">
+            <doc title="List of brands categories delimited by comma. Video indexer will only take these categories in to account when indexing. If not specified all brands will be used." />
+          </param>
+          <representation mediaType="multipart/form-data">
+            <param style="query" name="body" type="xs:base64Binary">
+              <doc title="If a video URL is not specified, the file should be passed as a multipart/form body content." />
+            </param>
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:UploadResponse" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/{location}/Accounts/{accountId}/Videos/{videoId}/Index">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="location" type="xs:string" required="true">
+        <doc title="Indicates the Azure region to which the call should be routed." />
+        <option value="trial" />
+        <option value="eastus" />
+        <option value="westus2" />
+        <option value="eastasia" />
+        <option value="northeurope" />
+        <option value="westeurope" />
+        <option value="southeastasia" />
+        <option value="eastus2" />
+        <option value="australiaeast" />
+        <option value="southcentralus" />
+        <option value="japaneast" />
+        <option value="uksouth" />
+        <option value="switzerlandnorth" />
+        <option value="switzerlandwest" />
+        <option value="centralindia" />
+        <option value="canadacentral" />
+        <option value="westus" />
+        <option value="northcentralus" />
+        <option value="francecentral" />
+        <option value="centralus" />
+        <option value="koreacentral" />
+        <option value="brazilsouth" />
+        <option value="japanwest" />
+        <option value="westcentralus" />
+      </param>
+      <param style="template" name="accountId" type="xs:string" required="true">
+        <doc title="Account ID is a globally unique identifier (GUID) for the account." />
+      </param>
+      <param style="template" name="videoId" type="xs:string" required="true">
+        <doc title="The video ID." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="GetVideoIndex" actionName="Get-Video-Index" siena:isDeprecated="false">
+        <doc title="Get Video Index&#xA;This operation gets a video and its insights." />
+        <request>
+          <param style="query" name="accessToken" type="xs:string" required="true">
+            <doc title="An account access token with read permissions." />
+          </param>
+          <param style="query" name="language" type="xs:string" default="English">
+            <doc title="The language of the captions." />
+            <option value="English" />
+            <option value="Spanish" />
+            <option value="Russian" />
+            <option value="Japanese" />
+            <option value="German" />
+            <option value="French" />
+            <option value="Portuguese" />
+            <option value="Italian" />
+            <option value="Chinese" />
+            <option value="Filipino" />
+            <option value="Arabic" />
+            <option value="ar-EG" />
+            <option value="en-US" />
+            <option value="es-ES" />
+            <option value="fr-FR" />
+            <option value="de-DE" />
+            <option value="it-IT" />
+            <option value="ja-JP" />
+            <option value="pt-BR" />
+            <option value="ru-RU" />
+            <option value="zh-Hans" />
+            <option value="fil-PH" />
+            <option value="Af-ZA" />
+            <option value="Bn-BD" />
+            <option value="Bs-Latn" />
+            <option value="Bg-BG" />
+            <option value="Ca-ES" />
+            <option value="Hr-HR" />
+            <option value="Cs-CZ" />
+            <option value="Da-DK" />
+            <option value="Nl-NL" />
+            <option value="En-FJ" />
+            <option value="En-GB" />
+            <option value="En-WS" />
+            <option value="Es-MX" />
+            <option value="Et-EE" />
+            <option value="Fi-FI" />
+            <option value="El-GR" />
+            <option value="Fr-HT" />
+            <option value="He-IL" />
+            <option value="Hi-IN" />
+            <option value="Hu-HU" />
+            <option value="Id-ID" />
+            <option value="Sw-KE" />
+            <option value="Ko-KR" />
+            <option value="Lv-LV" />
+            <option value="Lt-LT" />
+            <option value="Mg-MG" />
+            <option value="Ms-MY" />
+            <option value="Mt-MT" />
+            <option value="Nb-NO" />
+            <option value="Fa-IR" />
+            <option value="Pl-PL" />
+            <option value="Ro-RO" />
+            <option value="Sr-Cyrl-RS" />
+            <option value="Sr-Latn-RS" />
+            <option value="Sk-SK" />
+            <option value="Sl-SI" />
+            <option value="Sv-SE" />
+            <option value="Ta-IN" />
+            <option value="Th-TH" />
+            <option value="To-TO" />
+            <option value="Tr-TR" />
+            <option value="Uk-UA" />
+            <option value="Ur-PK" />
+            <option value="Vi-VN" />
+            <option value="Zh-Hant" />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:GetIndexResponse" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/{location}/Accounts/{accountId}/Videos/Search">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="location" type="xs:string" required="true">
+        <doc title="Indicates the Azure region to which the call should be routed." />
+        <option value="trial" />
+        <option value="eastus" />
+        <option value="westus2" />
+        <option value="eastasia" />
+        <option value="northeurope" />
+        <option value="westeurope" />
+        <option value="southeastasia" />
+        <option value="eastus2" />
+        <option value="australiaeast" />
+        <option value="southcentralus" />
+        <option value="japaneast" />
+        <option value="uksouth" />
+        <option value="switzerlandnorth" />
+        <option value="switzerlandwest" />
+        <option value="centralindia" />
+        <option value="canadacentral" />
+        <option value="westus" />
+        <option value="northcentralus" />
+        <option value="francecentral" />
+        <option value="centralus" />
+        <option value="koreacentral" />
+        <option value="brazilsouth" />
+        <option value="japanwest" />
+        <option value="westcentralus" />
+      </param>
+      <param style="template" name="accountId" type="xs:string" required="true">
+        <doc title="Account ID is a globally unique identifier (GUID) for the account." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="Searchvideos" actionName="Search-videos" siena:isDeprecated="false">
+        <doc title="Search Videos&#xA;This operation performs a search for text, keywords, and visual content." />
+        <request>
+          <param style="query" name="query" type="xs:string">
+            <doc title="Free text to search for." />
+          </param>
+          <param style="query" name="textScope" type="xs:string">
+            <doc title="The text scope to search in." />
+            <option value="Transcript" />
+            <option value="Ocr" />
+          </param>
+          <param style="query" name="privacy" type="xs:string">
+            <doc title="The video privacy." />
+            <option value="Private" />
+            <option value="Public" />
+          </param>
+          <param style="query" name="id" type="xs:string">
+            <doc title="A video ID to search for." />
+          </param>
+          <param style="query" name="partition" type="xs:string">
+            <doc title="A partition to search videos by." />
+          </param>
+          <param style="query" name="owner" type="xs:string">
+            <doc title="A video owner to search for." />
+          </param>
+          <param style="query" name="face" type="xs:string">
+            <doc title="Search for people or celebrities." />
+          </param>
+          <param style="query" name="externalId" type="xs:string">
+            <doc title="An external ID (associated with the video at upload)." />
+          </param>
+          <param style="query" name="pageSize" type="xs:long">
+            <doc title="The number of results to return." />
+          </param>
+          <param style="query" name="skip" type="xs:long">
+            <doc title="The number of results to skip (used for paging)." />
+          </param>
+          <param style="query" name="sourceLanguage" type="xs:string" default="English">
+            <doc title="Include only videos with the specified source language. You can specify multiple language parameters (e.g. $language=English&amp;language=French) to search multiple languages. Leaving this parameter blank will search all languages." />
+            <option value="English" />
+            <option value="Spanish" />
+            <option value="Russian" />
+            <option value="Japanese" />
+            <option value="German" />
+            <option value="French" />
+            <option value="Portuguese" />
+            <option value="Italian" />
+            <option value="Chinese" />
+            <option value="Filipino" />
+            <option value="Arabic" />
+            <option value="ar-EG" />
+            <option value="en-US" />
+            <option value="es-ES" />
+            <option value="fr-FR" />
+            <option value="de-DE" />
+            <option value="it-IT" />
+            <option value="ja-JP" />
+            <option value="pt-BR" />
+            <option value="ru-RU" />
+            <option value="zh-Hans" />
+            <option value="fil-PH" />
+            <option value="Af-ZA" />
+            <option value="Bn-BD" />
+            <option value="Bs-Latn" />
+            <option value="Bg-BG" />
+            <option value="Ca-ES" />
+            <option value="Hr-HR" />
+            <option value="Cs-CZ" />
+            <option value="Da-DK" />
+            <option value="Nl-NL" />
+            <option value="En-FJ" />
+            <option value="En-WS" />
+            <option value="Et-EE" />
+            <option value="Fi-FI" />
+            <option value="El-GR" />
+            <option value="Fr-HT" />
+            <option value="He-IL" />
+            <option value="Hi-IN" />
+            <option value="Hu-HU" />
+            <option value="Id-ID" />
+            <option value="Sw-KE" />
+            <option value="Ko-KR" />
+            <option value="Lv-LV" />
+            <option value="Lt-LT" />
+            <option value="Mg-MG" />
+            <option value="Ms-MY" />
+            <option value="Mt-MT" />
+            <option value="Nb-NO" />
+            <option value="Fa-IR" />
+            <option value="Pl-PL" />
+            <option value="Ro-RO" />
+            <option value="Sr-Cyrl-RS" />
+            <option value="Sr-Latn-RS" />
+            <option value="Sk-SK" />
+            <option value="Sl-SI" />
+            <option value="Sv-SE" />
+            <option value="Ta-IN" />
+            <option value="Th-TH" />
+            <option value="To-TO" />
+            <option value="Tr-TR" />
+            <option value="Uk-UA" />
+            <option value="Ur-PK" />
+            <option value="Vi-VN" />
+            <option value="Zh-Hant" />
+          </param>
+          <param style="query" name="language" type="xs:string" default="English">
+            <doc title="The search language. You can specify multiple language parameters (e.g. $language=English&amp;language=French) to search multiple languages. Leaving this parameter blank will search all languages." />
+            <option value="English" />
+            <option value="Spanish" />
+            <option value="Russian" />
+            <option value="Japanese" />
+            <option value="German" />
+            <option value="French" />
+            <option value="Portuguese" />
+            <option value="Italian" />
+            <option value="Chinese" />
+            <option value="Filipino" />
+            <option value="Arabic" />
+            <option value="ar-EG" />
+            <option value="en-US" />
+            <option value="es-ES" />
+            <option value="fr-FR" />
+            <option value="de-DE" />
+            <option value="it-IT" />
+            <option value="ja-JP" />
+            <option value="pt-BR" />
+            <option value="ru-RU" />
+            <option value="zh-Hans" />
+            <option value="fil-PH" />
+            <option value="Af-ZA" />
+            <option value="Bn-BD" />
+            <option value="Bs-Latn" />
+            <option value="Bg-BG" />
+            <option value="Ca-ES" />
+            <option value="Hr-HR" />
+            <option value="Cs-CZ" />
+            <option value="Da-DK" />
+            <option value="Nl-NL" />
+            <option value="En-FJ" />
+            <option value="En-GB" />
+            <option value="En-WS" />
+            <option value="Es-MX" />
+            <option value="Et-EE" />
+            <option value="Fi-FI" />
+            <option value="El-GR" />
+            <option value="Fr-HT" />
+            <option value="He-IL" />
+            <option value="Hi-IN" />
+            <option value="Hu-HU" />
+            <option value="Id-ID" />
+            <option value="Sw-KE" />
+            <option value="Ko-KR" />
+            <option value="Lv-LV" />
+            <option value="Lt-LT" />
+            <option value="Mg-MG" />
+            <option value="Ms-MY" />
+            <option value="Mt-MT" />
+            <option value="Nb-NO" />
+            <option value="Fa-IR" />
+            <option value="Pl-PL" />
+            <option value="Ro-RO" />
+            <option value="Sr-Cyrl-RS" />
+            <option value="Sr-Latn-RS" />
+            <option value="Sk-SK" />
+            <option value="Sl-SI" />
+            <option value="Sv-SE" />
+            <option value="Ta-IN" />
+            <option value="Th-TH" />
+            <option value="To-TO" />
+            <option value="Tr-TR" />
+            <option value="Uk-UA" />
+            <option value="Ur-PK" />
+            <option value="Vi-VN" />
+            <option value="Zh-Hant" />
+          </param>
+          <param style="query" name="accessToken" type="xs:string" required="true">
+            <doc title="An account access token with read permissions." />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:Microsoft_VideoIndexer_Common_ContractsV2_PlaylistSearchResultV2" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/{location}/Accounts/{accountId}/Videos/{videoId}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="location" type="xs:string" required="true">
+        <doc title="Indicates the Azure region to which the call should be routed." />
+        <option value="trial" />
+        <option value="eastus" />
+        <option value="westus2" />
+        <option value="eastasia" />
+        <option value="northeurope" />
+        <option value="westeurope" />
+        <option value="southeastasia" />
+        <option value="eastus2" />
+        <option value="australiaeast" />
+        <option value="southcentralus" />
+        <option value="japaneast" />
+        <option value="uksouth" />
+        <option value="switzerlandnorth" />
+        <option value="switzerlandwest" />
+        <option value="centralindia" />
+        <option value="canadacentral" />
+        <option value="westus" />
+        <option value="northcentralus" />
+        <option value="francecentral" />
+        <option value="centralus" />
+        <option value="koreacentral" />
+        <option value="brazilsouth" />
+        <option value="japanwest" />
+        <option value="westcentralus" />
+      </param>
+      <param style="template" name="accountId" type="xs:string" required="true">
+        <doc title="Account ID is a globally unique identifier (GUID) for the account." />
+      </param>
+      <param style="template" name="videoId" type="xs:string" required="true">
+        <doc title="The video ID." />
+      </param>
+      <method siena:requiresAuthentication="true" name="DELETE" id="Deletevideo" actionName="Delete-video" siena:isDeprecated="false">
+        <doc title="Delete Video&#xA;This operation deletes the specified video and all related insights found when the video was indexed." />
+        <request>
+          <param style="query" name="accessToken" type="xs:string" required="true">
+            <doc title="An account access token with write permissions." />
+          </param>
+        </request>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/{location}/Accounts/{accountId}/Videos/{videoId}/SourceFile">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="location" type="xs:string" required="true">
+        <doc title="Indicates the Azure region to which the call should be routed." />
+        <option value="trial" />
+        <option value="eastus" />
+        <option value="westus2" />
+        <option value="eastasia" />
+        <option value="northeurope" />
+        <option value="westeurope" />
+        <option value="southeastasia" />
+        <option value="eastus2" />
+        <option value="australiaeast" />
+        <option value="southcentralus" />
+        <option value="japaneast" />
+        <option value="uksouth" />
+        <option value="switzerlandnorth" />
+        <option value="switzerlandwest" />
+        <option value="centralindia" />
+        <option value="canadacentral" />
+        <option value="westus" />
+        <option value="northcentralus" />
+        <option value="francecentral" />
+        <option value="centralus" />
+        <option value="koreacentral" />
+        <option value="brazilsouth" />
+        <option value="japanwest" />
+        <option value="westcentralus" />
+      </param>
+      <param style="template" name="accountId" type="xs:string" required="true">
+        <doc title="Account ID is a globally unique identifier (GUID) for the account." />
+      </param>
+      <param style="template" name="videoId" type="xs:string" required="true">
+        <doc title="The video ID." />
+      </param>
+      <method siena:requiresAuthentication="true" name="DELETE" id="Deletevideosourcefile" actionName="Delete-video-source-file" siena:isDeprecated="false">
+        <doc title="Delete Video Source File&#xA;This operation deletes the video source file, but does not delete the insights found when the video was indexed." />
+        <request>
+          <param style="query" name="accessToken" type="xs:string" required="true">
+            <doc title="An account access token with write permissions." />
+          </param>
+        </request>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/{location}/Accounts/{accountId}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="location" type="xs:string" required="true">
+        <doc title="Indicates the Azure region to which the call should be routed." />
+        <option value="trial" />
+        <option value="eastus" />
+        <option value="westus2" />
+        <option value="eastasia" />
+        <option value="northeurope" />
+        <option value="westeurope" />
+        <option value="southeastasia" />
+        <option value="eastus2" />
+        <option value="australiaeast" />
+        <option value="southcentralus" />
+        <option value="japaneast" />
+        <option value="uksouth" />
+        <option value="switzerlandnorth" />
+        <option value="switzerlandwest" />
+        <option value="centralindia" />
+        <option value="canadacentral" />
+        <option value="westus" />
+        <option value="northcentralus" />
+        <option value="francecentral" />
+        <option value="centralus" />
+        <option value="koreacentral" />
+        <option value="brazilsouth" />
+        <option value="japanwest" />
+        <option value="westcentralus" />
+      </param>
+      <param style="template" name="accountId" type="xs:string" required="true">
+        <doc title="Account ID is a globally unique identifier (GUID) for the account." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="GetAccount" actionName="Get-Account" siena:isDeprecated="false">
+        <doc title="Get Account&#xA;This operation returns the details of the user's account." />
+        <request>
+          <param style="query" name="accessToken" type="xs:string" required="true">
+            <doc title="An account access token with read permissions." />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:Microsoft_VideoIndexer_Common_ContractsV2_AccountContractSlim" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/{location}/Accounts/{accountId}/Videos/{videoId}/ReIndex">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="location" type="xs:string" required="true">
+        <doc title="Indicates the Azure region to which the call should be routed." />
+        <option value="trial" />
+        <option value="eastus" />
+        <option value="westus2" />
+        <option value="eastasia" />
+        <option value="northeurope" />
+        <option value="westeurope" />
+        <option value="southeastasia" />
+        <option value="eastus2" />
+        <option value="australiaeast" />
+        <option value="southcentralus" />
+        <option value="japaneast" />
+        <option value="uksouth" />
+        <option value="switzerlandnorth" />
+        <option value="switzerlandwest" />
+        <option value="centralindia" />
+        <option value="canadacentral" />
+        <option value="westus" />
+        <option value="northcentralus" />
+        <option value="francecentral" />
+        <option value="centralus" />
+        <option value="koreacentral" />
+        <option value="brazilsouth" />
+        <option value="japanwest" />
+        <option value="westcentralus" />
+      </param>
+      <param style="template" name="accountId" type="xs:string" required="true">
+        <doc title="Account ID is a globally unique identifier (GUID) for the account." />
+      </param>
+      <param style="template" name="videoId" type="xs:string" required="true">
+        <doc title="The video ID." />
+      </param>
+      <method siena:requiresAuthentication="true" name="PUT" id="Reindexvideo" actionName="Re-index-video" siena:isDeprecated="false">
+        <doc title="Re-index Video&#xA;This operation re-indexes the given video." />
+        <request>
+          <param style="query" name="accessToken" type="xs:string" required="true">
+            <doc title="An account access token with write permissions." />
+          </param>
+          <param style="query" name="indexingPreset" type="xs:string">
+            <doc title="The indexing preset to use." />
+            <option value="Default" />
+            <option value="AudioOnly" />
+            <option value="DefaultWithNoiseReduction" />
+            <option value="VideoOnly" />
+          </param>
+          <param style="query" name="streamingPreset" type="xs:string">
+            <doc title="The streaming preset to use." />
+            <option value="Default" />
+            <option value="SingleBitrate" />
+            <option value="AdaptiveBitrate" />
+            <option value="NoStreaming" />
+          </param>
+          <param style="query" name="callbackUrl" type="xs:string">
+            <doc title="A URL to notify when indexing is complete.&#xA;It should be a POST URL and Video Indexer will add 2 additional query string parameters to it: ID and state." />
+          </param>
+          <param style="query" name="priority" type="xs:string">
+            <doc title="Index priority (Low, Normal and High). Can be used in paid regions only." />
+            <option value="Low" />
+            <option value="Normal" />
+            <option value="High" />
+          </param>
+          <param style="query" name="brandsCategories" type="xs:string">
+            <doc title="List of brands categories delimited by comma. Video indexer will only take these categories in to account when indexing. If not specified all brands will be used." />
+          </param>
+          <param style="query" name="sourceLanguage" type="xs:string" default="English">
+            <doc title="The language to set set as the source language of the video, to be used when generating the transcript." />
+            <option value="Auto" />
+            <option value="English" />
+            <option value="Spanish" />
+            <option value="Russian" />
+            <option value="Japanese" />
+            <option value="German" />
+            <option value="French" />
+            <option value="Portuguese" />
+            <option value="Italian" />
+            <option value="Chinese" />
+            <option value="ar-EG" />
+            <option value="en-US" />
+            <option value="es-ES" />
+            <option value="ru-RU" />
+            <option value="ja-JP" />
+            <option value="de-DE" />
+            <option value="fr-FR" />
+            <option value="pt-BR" />
+            <option value="it-IT" />
+            <option value="zh-CN" />
+            <option value="hi-IN" />
+            <option value="ko-KR" />
+          </param>
+        </request>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/{location}/Accounts/{accountId}/Videos/GetIdByExternalId">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="location" type="xs:string" required="true">
+        <doc title="Indicates the Azure region to which the call should be routed." />
+        <option value="trial" />
+        <option value="eastus" />
+        <option value="westus2" />
+        <option value="eastasia" />
+        <option value="northeurope" />
+        <option value="westeurope" />
+        <option value="southeastasia" />
+        <option value="eastus2" />
+        <option value="australiaeast" />
+        <option value="southcentralus" />
+        <option value="japaneast" />
+        <option value="uksouth" />
+        <option value="switzerlandnorth" />
+        <option value="switzerlandwest" />
+        <option value="centralindia" />
+        <option value="canadacentral" />
+        <option value="westus" />
+        <option value="northcentralus" />
+        <option value="francecentral" />
+        <option value="centralus" />
+        <option value="koreacentral" />
+        <option value="brazilsouth" />
+        <option value="japanwest" />
+        <option value="westcentralus" />
+      </param>
+      <param style="template" name="accountId" type="xs:string" required="true">
+        <doc title="Account ID is a globally unique identifier (GUID) for the account." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="Getvideoidbyexternalid" actionName="Get-video-id-by-external-id" siena:isDeprecated="false">
+        <doc title="Get Video ID by External ID&#xA;This operation retrieves the video ID corresponding to the external ID." />
+        <request>
+          <param style="query" name="externalId" type="xs:string" required="true">
+            <doc title="The external ID." />
+          </param>
+          <param style="query" name="accessToken" type="xs:string" required="true">
+            <doc title="An account access token with read permissions." />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="xs:string" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/{location}/Accounts/{accountId}/Videos/{videoId}/Index/Faces/{faceId}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="location" type="xs:string" required="true">
+        <doc title="Indicates the Azure region to which the call should be routed." />
+        <option value="trial" />
+        <option value="eastus" />
+        <option value="westus2" />
+        <option value="eastasia" />
+        <option value="northeurope" />
+        <option value="westeurope" />
+        <option value="southeastasia" />
+        <option value="eastus2" />
+        <option value="australiaeast" />
+        <option value="southcentralus" />
+        <option value="japaneast" />
+        <option value="uksouth" />
+        <option value="switzerlandnorth" />
+        <option value="switzerlandwest" />
+        <option value="centralindia" />
+        <option value="canadacentral" />
+        <option value="westus" />
+        <option value="northcentralus" />
+        <option value="francecentral" />
+        <option value="centralus" />
+        <option value="koreacentral" />
+        <option value="brazilsouth" />
+        <option value="japanwest" />
+        <option value="westcentralus" />
+      </param>
+      <param style="template" name="accountId" type="xs:string" required="true">
+        <doc title="Account ID is a globally unique identifier (GUID) for the account." />
+      </param>
+      <param style="template" name="videoId" type="xs:string" required="true">
+        <doc title="The video ID." />
+      </param>
+      <param style="template" name="faceId" type="xs:long" required="true">
+        <doc title="The face ID." />
+      </param>
+      <method siena:requiresAuthentication="true" name="PUT" id="Updateface" actionName="Update-face" siena:isDeprecated="false">
+        <doc title="Update Face Name&#xA;This operation updates the name of the given face and trains the face model to recognize that face in future videos." />
+        <request>
+          <param style="query" name="accessToken" type="xs:string" required="true">
+            <doc title="An account access token with write permissions." />
+          </param>
+          <param style="query" name="newName" type="xs:string" required="true">
+            <doc title="A new name for the face." />
+          </param>
+        </request>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/{location}/Accounts/{accountId}/Videos/{videoId}/Captions">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="location" type="xs:string" required="true">
+        <doc title="Indicates the Azure region to which the call should be routed." />
+        <option value="trial" />
+        <option value="eastus" />
+        <option value="westus2" />
+        <option value="eastasia" />
+        <option value="northeurope" />
+        <option value="westeurope" />
+        <option value="southeastasia" />
+        <option value="eastus2" />
+        <option value="australiaeast" />
+        <option value="southcentralus" />
+        <option value="japaneast" />
+        <option value="uksouth" />
+        <option value="switzerlandnorth" />
+        <option value="switzerlandwest" />
+        <option value="centralindia" />
+        <option value="canadacentral" />
+        <option value="westus" />
+        <option value="northcentralus" />
+        <option value="francecentral" />
+        <option value="centralus" />
+        <option value="koreacentral" />
+        <option value="brazilsouth" />
+        <option value="japanwest" />
+        <option value="westcentralus" />
+      </param>
+      <param style="template" name="accountId" type="xs:string" required="true">
+        <doc title="Account ID is a globally unique identifier (GUID) for the account." />
+      </param>
+      <param style="template" name="videoId" type="xs:string" required="true">
+        <doc title="The video ID." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="Getvideocaptions" actionName="Get-video-captions" siena:isDeprecated="false">
+        <doc title="Get Video Captions&#xA;This operation returns the captions extracted when the video was indexed." />
+        <request>
+          <param style="query" name="accessToken" type="xs:string" required="true">
+            <doc title="An account access token with read permissions." />
+          </param>
+          <param style="query" name="format" type="xs:string" required="true" default="vtt">
+            <doc title="The captions format (e.g. vtt)." />
+            <option value="vtt" />
+          </param>
+          <param style="query" name="language" type="xs:string" default="English">
+            <doc title="The language of the captions." />
+            <option value="English" />
+            <option value="Spanish" />
+            <option value="Russian" />
+            <option value="Japanese" />
+            <option value="German" />
+            <option value="French" />
+            <option value="Portuguese" />
+            <option value="Italian" />
+            <option value="Chinese" />
+            <option value="Filipino" />
+            <option value="Arabic" />
+            <option value="ar-EG" />
+            <option value="en-US" />
+            <option value="es-ES" />
+            <option value="fr-FR" />
+            <option value="de-DE" />
+            <option value="it-IT" />
+            <option value="ja-JP" />
+            <option value="pt-BR" />
+            <option value="ru-RU" />
+            <option value="zh-Hans" />
+            <option value="fil-PH" />
+            <option value="Af-ZA" />
+            <option value="Bn-BD" />
+            <option value="Bs-Latn" />
+            <option value="Bg-BG" />
+            <option value="Ca-ES" />
+            <option value="Hr-HR" />
+            <option value="Cs-CZ" />
+            <option value="Da-DK" />
+            <option value="Nl-NL" />
+            <option value="En-FJ" />
+            <option value="En-GB" />
+            <option value="En-WS" />
+            <option value="Es-MX" />
+            <option value="Et-EE" />
+            <option value="Fi-FI" />
+            <option value="El-GR" />
+            <option value="Fr-HT" />
+            <option value="He-IL" />
+            <option value="Hi-IN" />
+            <option value="Hu-HU" />
+            <option value="Id-ID" />
+            <option value="Sw-KE" />
+            <option value="Ko-KR" />
+            <option value="Lv-LV" />
+            <option value="Lt-LT" />
+            <option value="Mg-MG" />
+            <option value="Ms-MY" />
+            <option value="Mt-MT" />
+            <option value="Nb-NO" />
+            <option value="Fa-IR" />
+            <option value="Pl-PL" />
+            <option value="Ro-RO" />
+            <option value="Sr-Cyrl-RS" />
+            <option value="Sr-Latn-RS" />
+            <option value="Sk-SK" />
+            <option value="Sl-SI" />
+            <option value="Sv-SE" />
+            <option value="Ta-IN" />
+            <option value="Th-TH" />
+            <option value="To-TO" />
+            <option value="Tr-TR" />
+            <option value="Uk-UA" />
+            <option value="Ur-PK" />
+            <option value="Vi-VN" />
+            <option value="Zh-Hant" />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="xs:string" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/{location}/Accounts/{accountId}/Videos/{videoId}/Thumbnails/{thumbnailId}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="location" type="xs:string" required="true">
+        <doc title="Indicates the Azure region to which the call should be routed." />
+        <option value="trial" />
+        <option value="eastus" />
+        <option value="westus2" />
+        <option value="eastasia" />
+        <option value="northeurope" />
+        <option value="westeurope" />
+        <option value="southeastasia" />
+        <option value="eastus2" />
+        <option value="australiaeast" />
+        <option value="southcentralus" />
+        <option value="japaneast" />
+        <option value="uksouth" />
+        <option value="switzerlandnorth" />
+        <option value="switzerlandwest" />
+        <option value="centralindia" />
+        <option value="canadacentral" />
+        <option value="westus" />
+        <option value="northcentralus" />
+        <option value="francecentral" />
+        <option value="centralus" />
+        <option value="koreacentral" />
+        <option value="brazilsouth" />
+        <option value="japanwest" />
+        <option value="westcentralus" />
+      </param>
+      <param style="template" name="accountId" type="xs:string" required="true">
+        <doc title="Account ID is a globally unique identifier (GUID) for the account." />
+      </param>
+      <param style="template" name="videoId" type="xs:string" required="true">
+        <doc title="The video ID." />
+      </param>
+      <param style="template" name="thumbnailId" type="xs:string" required="true">
+        <doc title="The thumbnail ID." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="Getthumbnail" actionName="Get-thumbnail" siena:isDeprecated="false">
+        <doc title="Get Video Thumbnail&#xA;Get thumbnail image of a video." />
+        <request>
+          <param style="query" name="accessToken" type="xs:string" required="true">
+            <doc title="An account access token with read permissions." />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="xs:string" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/{location}/Accounts/{accountId}/Videos/{videoId}/Index/Transcript">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="location" type="xs:string" required="true">
+        <doc title="Indicates the Azure region to which the call should be routed." />
+        <option value="trial" />
+        <option value="eastus" />
+        <option value="westus2" />
+        <option value="eastasia" />
+        <option value="northeurope" />
+        <option value="westeurope" />
+        <option value="southeastasia" />
+        <option value="eastus2" />
+        <option value="australiaeast" />
+        <option value="southcentralus" />
+        <option value="japaneast" />
+        <option value="uksouth" />
+        <option value="switzerlandnorth" />
+        <option value="switzerlandwest" />
+        <option value="centralindia" />
+        <option value="canadacentral" />
+        <option value="westus" />
+        <option value="northcentralus" />
+        <option value="francecentral" />
+        <option value="centralus" />
+        <option value="koreacentral" />
+        <option value="brazilsouth" />
+        <option value="japanwest" />
+        <option value="westcentralus" />
+      </param>
+      <param style="template" name="accountId" type="xs:string" required="true">
+        <doc title="Account ID is a globally unique identifier (GUID) for the account." />
+      </param>
+      <param style="template" name="videoId" type="xs:string" required="true">
+        <doc title="The video ID." />
+      </param>
+      <method siena:requiresAuthentication="true" name="PUT" id="UpdateTranscript" actionName="Update-Transcript" siena:isDeprecated="false">
+        <doc title="Update Video Transcript&#xA;Updates the transcript of the video." />
+        <request>
+          <param style="query" name="accessToken" type="xs:string" required="true">
+            <doc title="An account access token with read permissions." />
+          </param>
+          <param style="query" name="language" type="xs:string" required="true" default="English">
+            <doc title="The language of the captions." />
+            <option value="English" />
+            <option value="Spanish" />
+            <option value="Russian" />
+            <option value="Japanese" />
+            <option value="German" />
+            <option value="French" />
+            <option value="Portuguese" />
+            <option value="Italian" />
+            <option value="Chinese" />
+            <option value="Filipino" />
+            <option value="Arabic" />
+            <option value="ar-EG" />
+            <option value="en-US" />
+            <option value="es-ES" />
+            <option value="fr-FR" />
+            <option value="de-DE" />
+            <option value="it-IT" />
+            <option value="ja-JP" />
+            <option value="pt-BR" />
+            <option value="ru-RU" />
+            <option value="zh-Hans" />
+            <option value="fil-PH" />
+            <option value="Af-ZA" />
+            <option value="Bn-BD" />
+            <option value="Bs-Latn" />
+            <option value="Bg-BG" />
+            <option value="Ca-ES" />
+            <option value="Hr-HR" />
+            <option value="Cs-CZ" />
+            <option value="Da-DK" />
+            <option value="Nl-NL" />
+            <option value="En-FJ" />
+            <option value="En-GB" />
+            <option value="En-WS" />
+            <option value="Es-MX" />
+            <option value="Et-EE" />
+            <option value="Fi-FI" />
+            <option value="El-GR" />
+            <option value="Fr-HT" />
+            <option value="He-IL" />
+            <option value="Hi-IN" />
+            <option value="Hu-HU" />
+            <option value="Id-ID" />
+            <option value="Sw-KE" />
+            <option value="Ko-KR" />
+            <option value="Lv-LV" />
+            <option value="Lt-LT" />
+            <option value="Mg-MG" />
+            <option value="Ms-MY" />
+            <option value="Mt-MT" />
+            <option value="Nb-NO" />
+            <option value="Fa-IR" />
+            <option value="Pl-PL" />
+            <option value="Ro-RO" />
+            <option value="Sr-Cyrl-RS" />
+            <option value="Sr-Latn-RS" />
+            <option value="Sk-SK" />
+            <option value="Sl-SI" />
+            <option value="Sv-SE" />
+            <option value="Ta-IN" />
+            <option value="Th-TH" />
+            <option value="To-TO" />
+            <option value="Tr-TR" />
+            <option value="Uk-UA" />
+            <option value="Ur-PK" />
+            <option value="Vi-VN" />
+            <option value="Zh-Hant" />
+          </param>
+          <param style="query" name="callbackUrl" type="xs:string">
+            <doc title="A URL to notify when indexing is complete.&#xA;It should be a POST URL and Video Indexer will add 2 additional query string parameters to it: ID and state." />
+          </param>
+          <param style="query" name="setAsSourceLanguage" type="xs:boolean" default="false">
+            <doc title="Determines whether the language parameter should be set as source language." />
+          </param>
+          <param style="query" name="sendSuccessEmail" type="xs:boolean" default="false">
+            <doc title="Determines whether to send a success email upon completion." />
+          </param>
+          <representation mediaType="application/json">
+            <param style="plain" name="content" path="" type="xs:string" required="true">
+              <doc title="The transcript to update." />
+            </param>
+          </representation>
+        </request>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_videoindexer-v2" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>

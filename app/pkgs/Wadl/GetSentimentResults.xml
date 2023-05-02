@@ -1,0 +1,1820 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://msmanaged-na.azure-apim.net/apim/getsentimentresults-5fa03598a9320f38aa-5f15dbda3abd7d3151" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="GetSentimentResults" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="GetSentimentResults">This connector retrieves relevant sentiment insights from JSON file</doc>
+  <grammars>
+    <jsonTypes targetNamespace="https://msmanaged-na.azure-apim.net/apim/getsentimentresults-5fa03598a9320f38aa-5f15dbda3abd7d3151" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <string name="FromFileName_responses_default_def_privacyMode_def" />
+      <string name="FromFileName_responses_default_def_state_def" />
+      <string name="FromFileName_responses_default_def_accountId_def" />
+      <string name="FromFileName_responses_default_def_id_def" />
+      <string name="FromFileName_responses_default_def_name_def" />
+      <string name="FromFileName_responses_default_def_userName_def" />
+      <string name="FromFileName_responses_default_def_created_def" />
+      <boolean name="FromFileName_responses_default_def_isOwned_def" />
+      <boolean name="FromFileName_responses_default_def_isEditable_def" />
+      <boolean name="FromFileName_responses_default_def_isBase_def" />
+      <integer name="FromFileName_responses_default_def_durationInSeconds_def" />
+      <string name="FromFileName_responses_default_def_duration_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_name_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_id_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_privacyMode_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_duration_def_time_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_duration_def_seconds_def" />
+      <object name="FromFileName_responses_default_def_summarizedInsights_def_duration_def">
+        <property name="time" type="string" />
+        <property name="seconds" type="number" />
+      </object>
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_thumbnailVideoId_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_thumbnailId_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_faces_def_items_def_videoId_def" />
+      <integer name="FromFileName_responses_default_def_summarizedInsights_def_faces_def_items_def_confidence_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_faces_def_items_def_description_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_faces_def_items_def_title_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_faces_def_items_def_thumbnailId_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_faces_def_items_def_seenDuration_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_faces_def_items_def_seenDurationRatio_def" />
+      <integer name="FromFileName_responses_default_def_summarizedInsights_def_faces_def_items_def_id_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_faces_def_items_def_name_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_faces_def_items_def_appearances_def_items_def_startTime_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_faces_def_items_def_appearances_def_items_def_endTime_def" />
+      <integer name="FromFileName_responses_default_def_summarizedInsights_def_faces_def_items_def_appearances_def_items_def_startSeconds_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_faces_def_items_def_appearances_def_items_def_endSeconds_def" />
+      <object name="FromFileName_responses_default_def_summarizedInsights_def_faces_def_items_def_appearances_def_items_def">
+        <property name="startTime" type="string" />
+        <property name="endTime" type="string" />
+        <property name="startSeconds" type="integer" />
+        <property name="endSeconds" type="number" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_summarizedInsights_def_faces_def_items_def_appearances_def_items_def" name="FromFileName_responses_default_def_summarizedInsights_def_faces_def_items_def_appearances_def" />
+      <object name="FromFileName_responses_default_def_summarizedInsights_def_faces_def_items_def">
+        <property name="videoId" type="string" />
+        <property name="confidence" type="integer" />
+        <property name="description" type="string" />
+        <property name="title" type="string" />
+        <property name="thumbnailId" type="string" />
+        <property name="seenDuration" type="number" />
+        <property name="seenDurationRatio" type="number" />
+        <property name="id" type="integer" />
+        <property name="name" type="string" />
+        <property name="appearances" typeRef="FromFileName_responses_default_def_summarizedInsights_def_faces_def_items_def_appearances_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_summarizedInsights_def_faces_def_items_def" name="FromFileName_responses_default_def_summarizedInsights_def_faces_def" />
+      <boolean name="FromFileName_responses_default_def_summarizedInsights_def_keywords_def_items_def_isTranscript_def" />
+      <integer name="FromFileName_responses_default_def_summarizedInsights_def_keywords_def_items_def_id_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_keywords_def_items_def_name_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_keywords_def_items_def_appearances_def_items_def_startTime_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_keywords_def_items_def_appearances_def_items_def_endTime_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_keywords_def_items_def_appearances_def_items_def_startSeconds_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_keywords_def_items_def_appearances_def_items_def_endSeconds_def" />
+      <object name="FromFileName_responses_default_def_summarizedInsights_def_keywords_def_items_def_appearances_def_items_def">
+        <property name="startTime" type="string" />
+        <property name="endTime" type="string" />
+        <property name="startSeconds" type="number" />
+        <property name="endSeconds" type="number" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_summarizedInsights_def_keywords_def_items_def_appearances_def_items_def" name="FromFileName_responses_default_def_summarizedInsights_def_keywords_def_items_def_appearances_def" />
+      <object name="FromFileName_responses_default_def_summarizedInsights_def_keywords_def_items_def">
+        <property name="isTranscript" type="boolean" />
+        <property name="id" type="integer" />
+        <property name="name" type="string" />
+        <property name="appearances" typeRef="FromFileName_responses_default_def_summarizedInsights_def_keywords_def_items_def_appearances_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_summarizedInsights_def_keywords_def_items_def" name="FromFileName_responses_default_def_summarizedInsights_def_keywords_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_sentiments_def_items_def_sentimentKey_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_sentiments_def_items_def_seenDurationRatio_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_sentiments_def_items_def_appearances_def_items_def_startTime_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_sentiments_def_items_def_appearances_def_items_def_endTime_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_sentiments_def_items_def_appearances_def_items_def_startSeconds_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_sentiments_def_items_def_appearances_def_items_def_endSeconds_def" />
+      <object name="FromFileName_responses_default_def_summarizedInsights_def_sentiments_def_items_def_appearances_def_items_def">
+        <property name="startTime" type="string" />
+        <property name="endTime" type="string" />
+        <property name="startSeconds" type="number" />
+        <property name="endSeconds" type="number" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_summarizedInsights_def_sentiments_def_items_def_appearances_def_items_def" name="FromFileName_responses_default_def_summarizedInsights_def_sentiments_def_items_def_appearances_def" />
+      <object name="FromFileName_responses_default_def_summarizedInsights_def_sentiments_def_items_def">
+        <property name="sentimentKey" type="string" />
+        <property name="seenDurationRatio" type="number" />
+        <property name="appearances" typeRef="FromFileName_responses_default_def_summarizedInsights_def_sentiments_def_items_def_appearances_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_summarizedInsights_def_sentiments_def_items_def" name="FromFileName_responses_default_def_summarizedInsights_def_sentiments_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_emotions_def_items_def_type_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_emotions_def_items_def_seenDurationRatio_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_emotions_def_items_def_appearances_def_items_def_startTime_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_emotions_def_items_def_appearances_def_items_def_endTime_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_emotions_def_items_def_appearances_def_items_def_startSeconds_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_emotions_def_items_def_appearances_def_items_def_endSeconds_def" />
+      <object name="FromFileName_responses_default_def_summarizedInsights_def_emotions_def_items_def_appearances_def_items_def">
+        <property name="startTime" type="string" />
+        <property name="endTime" type="string" />
+        <property name="startSeconds" type="number" />
+        <property name="endSeconds" type="number" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_summarizedInsights_def_emotions_def_items_def_appearances_def_items_def" name="FromFileName_responses_default_def_summarizedInsights_def_emotions_def_items_def_appearances_def" />
+      <object name="FromFileName_responses_default_def_summarizedInsights_def_emotions_def_items_def">
+        <property name="type" type="string" />
+        <property name="seenDurationRatio" type="number" />
+        <property name="appearances" typeRef="FromFileName_responses_default_def_summarizedInsights_def_emotions_def_items_def_appearances_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_summarizedInsights_def_emotions_def_items_def" name="FromFileName_responses_default_def_summarizedInsights_def_emotions_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_audioEffects_def_items_def_audioEffectKey_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_audioEffects_def_items_def_seenDurationRatio_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_audioEffects_def_items_def_seenDuration_def" />
+      <integer name="FromFileName_responses_default_def_summarizedInsights_def_audioEffects_def_items_def_appearances_def_items_def_confidence_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_audioEffects_def_items_def_appearances_def_items_def_startTime_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_audioEffects_def_items_def_appearances_def_items_def_endTime_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_audioEffects_def_items_def_appearances_def_items_def_startSeconds_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_audioEffects_def_items_def_appearances_def_items_def_endSeconds_def" />
+      <object name="FromFileName_responses_default_def_summarizedInsights_def_audioEffects_def_items_def_appearances_def_items_def">
+        <property name="confidence" type="integer" />
+        <property name="startTime" type="string" />
+        <property name="endTime" type="string" />
+        <property name="startSeconds" type="number" />
+        <property name="endSeconds" type="number" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_summarizedInsights_def_audioEffects_def_items_def_appearances_def_items_def" name="FromFileName_responses_default_def_summarizedInsights_def_audioEffects_def_items_def_appearances_def" />
+      <object name="FromFileName_responses_default_def_summarizedInsights_def_audioEffects_def_items_def">
+        <property name="audioEffectKey" type="string" />
+        <property name="seenDurationRatio" type="number" />
+        <property name="seenDuration" type="number" />
+        <property name="appearances" typeRef="FromFileName_responses_default_def_summarizedInsights_def_audioEffects_def_items_def_appearances_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_summarizedInsights_def_audioEffects_def_items_def" name="FromFileName_responses_default_def_summarizedInsights_def_audioEffects_def" />
+      <integer name="FromFileName_responses_default_def_summarizedInsights_def_labels_def_items_def_id_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_labels_def_items_def_name_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_labels_def_items_def_appearances_def_items_def_confidence_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_labels_def_items_def_appearances_def_items_def_startTime_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_labels_def_items_def_appearances_def_items_def_endTime_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_labels_def_items_def_appearances_def_items_def_startSeconds_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_labels_def_items_def_appearances_def_items_def_endSeconds_def" />
+      <object name="FromFileName_responses_default_def_summarizedInsights_def_labels_def_items_def_appearances_def_items_def">
+        <property name="confidence" type="number" />
+        <property name="startTime" type="string" />
+        <property name="endTime" type="string" />
+        <property name="startSeconds" type="number" />
+        <property name="endSeconds" type="number" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_summarizedInsights_def_labels_def_items_def_appearances_def_items_def" name="FromFileName_responses_default_def_summarizedInsights_def_labels_def_items_def_appearances_def" />
+      <object name="FromFileName_responses_default_def_summarizedInsights_def_labels_def_items_def">
+        <property name="id" type="integer" />
+        <property name="name" type="string" />
+        <property name="appearances" typeRef="FromFileName_responses_default_def_summarizedInsights_def_labels_def_items_def_appearances_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_summarizedInsights_def_labels_def_items_def" name="FromFileName_responses_default_def_summarizedInsights_def_labels_def" />
+      <untypedObject name="FromFileName_responses_default_def_summarizedInsights_def_framePatterns_def_items_def" />
+      <array typeRef="FromFileName_responses_default_def_summarizedInsights_def_framePatterns_def_items_def" name="FromFileName_responses_default_def_summarizedInsights_def_framePatterns_def" />
+      <untypedObject name="FromFileName_responses_default_def_summarizedInsights_def_brands_def_items_def" />
+      <array typeRef="FromFileName_responses_default_def_summarizedInsights_def_brands_def_items_def" name="FromFileName_responses_default_def_summarizedInsights_def_brands_def" />
+      <untypedObject name="FromFileName_responses_default_def_summarizedInsights_def_namedLocations_def_items_def" />
+      <array typeRef="FromFileName_responses_default_def_summarizedInsights_def_namedLocations_def_items_def" name="FromFileName_responses_default_def_summarizedInsights_def_namedLocations_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_referenceId_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_referenceUrl_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_confidence_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_description_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_seenDuration_def" />
+      <integer name="FromFileName_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_id_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_name_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_appearances_def_items_def_startTime_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_appearances_def_items_def_endTime_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_appearances_def_items_def_startSeconds_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_appearances_def_items_def_endSeconds_def" />
+      <object name="FromFileName_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_appearances_def_items_def">
+        <property name="startTime" type="string" />
+        <property name="endTime" type="string" />
+        <property name="startSeconds" type="number" />
+        <property name="endSeconds" type="number" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_appearances_def_items_def" name="FromFileName_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_appearances_def" />
+      <object name="FromFileName_responses_default_def_summarizedInsights_def_namedPeople_def_items_def">
+        <property name="referenceId" type="string" />
+        <property name="referenceUrl" type="string" />
+        <property name="confidence" type="number" />
+        <property name="description" type="string" />
+        <property name="seenDuration" type="number" />
+        <property name="id" type="integer" />
+        <property name="name" type="string" />
+        <property name="appearances" typeRef="FromFileName_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_appearances_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_summarizedInsights_def_namedPeople_def_items_def" name="FromFileName_responses_default_def_summarizedInsights_def_namedPeople_def" />
+      <integer name="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_correspondenceCount_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerTalkToListenRatio_def_1_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerTalkToListenRatio_def_2_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerTalkToListenRatio_def_3_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerTalkToListenRatio_def_4_def" />
+      <object name="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerTalkToListenRatio_def">
+        <property name="1" type="number" />
+        <property name="2" type="number" />
+        <property name="3" type="number" />
+        <property name="4" type="number" />
+      </object>
+      <integer name="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerLongestMonolog_def_1_def" />
+      <integer name="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerLongestMonolog_def_2_def" />
+      <integer name="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerLongestMonolog_def_3_def" />
+      <integer name="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerLongestMonolog_def_4_def" />
+      <object name="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerLongestMonolog_def">
+        <property name="1" type="integer" />
+        <property name="2" type="integer" />
+        <property name="3" type="integer" />
+        <property name="4" type="integer" />
+      </object>
+      <integer name="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerNumberOfFragments_def_1_def" />
+      <integer name="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerNumberOfFragments_def_2_def" />
+      <integer name="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerNumberOfFragments_def_3_def" />
+      <integer name="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerNumberOfFragments_def_4_def" />
+      <object name="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerNumberOfFragments_def">
+        <property name="1" type="integer" />
+        <property name="2" type="integer" />
+        <property name="3" type="integer" />
+        <property name="4" type="integer" />
+      </object>
+      <integer name="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerWordCount_def_1_def" />
+      <integer name="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerWordCount_def_2_def" />
+      <integer name="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerWordCount_def_3_def" />
+      <integer name="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerWordCount_def_4_def" />
+      <object name="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerWordCount_def">
+        <property name="1" type="integer" />
+        <property name="2" type="integer" />
+        <property name="3" type="integer" />
+        <property name="4" type="integer" />
+      </object>
+      <object name="FromFileName_responses_default_def_summarizedInsights_def_statistics_def">
+        <property name="correspondenceCount" type="integer" />
+        <property name="speakerTalkToListenRatio" typeRef="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerTalkToListenRatio_def" />
+        <property name="speakerLongestMonolog" typeRef="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerLongestMonolog_def" />
+        <property name="speakerNumberOfFragments" typeRef="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerNumberOfFragments_def" />
+        <property name="speakerWordCount" typeRef="FromFileName_responses_default_def_summarizedInsights_def_statistics_def_speakerWordCount_def" />
+      </object>
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_topics_def_items_def_referenceUrl_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_topics_def_items_def_iptcName_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_topics_def_items_def_iabName_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_topics_def_items_def_confidence_def" />
+      <integer name="FromFileName_responses_default_def_summarizedInsights_def_topics_def_items_def_id_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_topics_def_items_def_name_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_topics_def_items_def_appearances_def_items_def_startTime_def" />
+      <string name="FromFileName_responses_default_def_summarizedInsights_def_topics_def_items_def_appearances_def_items_def_endTime_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_topics_def_items_def_appearances_def_items_def_startSeconds_def" />
+      <number name="FromFileName_responses_default_def_summarizedInsights_def_topics_def_items_def_appearances_def_items_def_endSeconds_def" />
+      <object name="FromFileName_responses_default_def_summarizedInsights_def_topics_def_items_def_appearances_def_items_def">
+        <property name="startTime" type="string" />
+        <property name="endTime" type="string" />
+        <property name="startSeconds" type="number" />
+        <property name="endSeconds" type="number" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_summarizedInsights_def_topics_def_items_def_appearances_def_items_def" name="FromFileName_responses_default_def_summarizedInsights_def_topics_def_items_def_appearances_def" />
+      <object name="FromFileName_responses_default_def_summarizedInsights_def_topics_def_items_def">
+        <property name="referenceUrl" type="string" />
+        <property name="iptcName" type="string" />
+        <property name="iabName" type="string" />
+        <property name="confidence" type="number" />
+        <property name="id" type="integer" />
+        <property name="name" type="string" />
+        <property name="appearances" typeRef="FromFileName_responses_default_def_summarizedInsights_def_topics_def_items_def_appearances_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_summarizedInsights_def_topics_def_items_def" name="FromFileName_responses_default_def_summarizedInsights_def_topics_def" />
+      <object name="FromFileName_responses_default_def_summarizedInsights_def">
+        <property name="name" type="string" />
+        <property name="id" type="string" />
+        <property name="privacyMode" type="string" />
+        <property name="duration" typeRef="FromFileName_responses_default_def_summarizedInsights_def_duration_def" />
+        <property name="thumbnailVideoId" type="string" />
+        <property name="thumbnailId" type="string" />
+        <property name="faces" typeRef="FromFileName_responses_default_def_summarizedInsights_def_faces_def" />
+        <property name="keywords" typeRef="FromFileName_responses_default_def_summarizedInsights_def_keywords_def" />
+        <property name="sentiments" typeRef="FromFileName_responses_default_def_summarizedInsights_def_sentiments_def" />
+        <property name="emotions" typeRef="FromFileName_responses_default_def_summarizedInsights_def_emotions_def" />
+        <property name="audioEffects" typeRef="FromFileName_responses_default_def_summarizedInsights_def_audioEffects_def" />
+        <property name="labels" typeRef="FromFileName_responses_default_def_summarizedInsights_def_labels_def" />
+        <property name="framePatterns" typeRef="FromFileName_responses_default_def_summarizedInsights_def_framePatterns_def" />
+        <property name="brands" typeRef="FromFileName_responses_default_def_summarizedInsights_def_brands_def" />
+        <property name="namedLocations" typeRef="FromFileName_responses_default_def_summarizedInsights_def_namedLocations_def" />
+        <property name="namedPeople" typeRef="FromFileName_responses_default_def_summarizedInsights_def_namedPeople_def" />
+        <property name="statistics" typeRef="FromFileName_responses_default_def_summarizedInsights_def_statistics_def" />
+        <property name="topics" typeRef="FromFileName_responses_default_def_summarizedInsights_def_topics_def" />
+      </object>
+      <string name="FromFileName_responses_default_def_videos_def_items_def_accountId_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_id_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_state_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_moderationState_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_reviewState_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_privacyMode_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_processingProgress_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_failureCode_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_failureMessage_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_version_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_duration_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_sourceLanguage_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_sourceLanguages_def_items_def" />
+      <array type="string" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_sourceLanguages_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_language_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_languages_def_items_def" />
+      <array type="string" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_languages_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_id_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_text_def" />
+      <number name="FromFileName_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_confidence_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_speakerId_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_language_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_instances_def_items_def_start_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_instances_def_items_def_end_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_instances_def_items_def">
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_instances_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_instances_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def">
+        <property name="id" type="integer" />
+        <property name="text" type="string" />
+        <property name="confidence" type="number" />
+        <property name="speakerId" type="integer" />
+        <property name="language" type="string" />
+        <property name="instances" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_instances_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_transcript_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_id_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_text_def" />
+      <number name="FromFileName_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_confidence_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_left_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_top_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_width_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_height_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_angle_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_language_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_instances_def_items_def_start_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_instances_def_items_def_end_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_instances_def_items_def">
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_instances_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_instances_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def">
+        <property name="id" type="integer" />
+        <property name="text" type="string" />
+        <property name="confidence" type="number" />
+        <property name="left" type="integer" />
+        <property name="top" type="integer" />
+        <property name="width" type="integer" />
+        <property name="height" type="integer" />
+        <property name="angle" type="integer" />
+        <property name="language" type="string" />
+        <property name="instances" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_instances_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_ocr_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_id_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_text_def" />
+      <number name="FromFileName_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_confidence_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_language_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_instances_def_items_def_start_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_instances_def_items_def_end_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_instances_def_items_def">
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_instances_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_instances_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def">
+        <property name="id" type="integer" />
+        <property name="text" type="string" />
+        <property name="confidence" type="number" />
+        <property name="language" type="string" />
+        <property name="instances" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_instances_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_keywords_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_id_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_name_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_referenceId_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_referenceType_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_iptcName_def" />
+      <number name="FromFileName_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_confidence_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_iabName_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_language_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_instances_def_items_def_start_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_instances_def_items_def_end_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_instances_def_items_def">
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_instances_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_instances_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_referenceUrl_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def">
+        <property name="id" type="integer" />
+        <property name="name" type="string" />
+        <property name="referenceId" type="string" />
+        <property name="referenceType" type="string" />
+        <property name="iptcName" type="string" />
+        <property name="confidence" type="number" />
+        <property name="iabName" type="string" />
+        <property name="language" type="string" />
+        <property name="instances" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_instances_def" />
+        <property name="referenceUrl" type="string" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_topics_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_id_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_name_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_confidence_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_description_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnailId_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_title_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_imageUrl_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def_id_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def_fileName_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def_instances_def_items_def_start_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def_instances_def_items_def_end_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def_instances_def_items_def">
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def_instances_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def_instances_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def">
+        <property name="id" type="string" />
+        <property name="fileName" type="string" />
+        <property name="instances" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def_instances_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_instances_def_items_def_thumbnailsIds_def_items_def" />
+      <array type="string" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_instances_def_items_def_thumbnailsIds_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_instances_def_items_def_start_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_instances_def_items_def_end_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_instances_def_items_def">
+        <property name="thumbnailsIds" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_instances_def_items_def_thumbnailsIds_def" />
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_instances_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_instances_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def">
+        <property name="id" type="integer" />
+        <property name="name" type="string" />
+        <property name="confidence" type="integer" />
+        <property name="description" type="string" />
+        <property name="thumbnailId" type="string" />
+        <property name="title" type="string" />
+        <property name="imageUrl" type="string" />
+        <property name="thumbnails" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def" />
+        <property name="instances" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_instances_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_id_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_name_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_referenceId_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_language_def" />
+      <number name="FromFileName_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_instances_def_items_def_confidence_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_instances_def_items_def_start_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_instances_def_items_def_end_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_instances_def_items_def">
+        <property name="confidence" type="number" />
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_instances_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_instances_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def">
+        <property name="id" type="integer" />
+        <property name="name" type="string" />
+        <property name="referenceId" type="string" />
+        <property name="language" type="string" />
+        <property name="instances" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_instances_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_labels_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_scenes_def_items_def_id_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_scenes_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_scenes_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_scenes_def_items_def_instances_def_items_def_start_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_scenes_def_items_def_instances_def_items_def_end_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_scenes_def_items_def_instances_def_items_def">
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_scenes_def_items_def_instances_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_scenes_def_items_def_instances_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_scenes_def_items_def">
+        <property name="id" type="integer" />
+        <property name="instances" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_scenes_def_items_def_instances_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_scenes_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_scenes_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_id_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_tags_def_items_def" />
+      <array type="string" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_tags_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def_id_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def_instances_def_items_def_thumbnailId_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def_instances_def_items_def_start_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def_instances_def_items_def_end_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def_instances_def_items_def">
+        <property name="thumbnailId" type="string" />
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def_instances_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def_instances_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def">
+        <property name="id" type="integer" />
+        <property name="instances" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def_instances_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_instances_def_items_def_start_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_instances_def_items_def_end_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_instances_def_items_def">
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_instances_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_instances_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def">
+        <property name="id" type="integer" />
+        <property name="tags" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_tags_def" />
+        <property name="keyFrames" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def" />
+        <property name="instances" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_instances_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_id_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_name_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_referenceId_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_referenceUrl_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_description_def" />
+      <untypedObject name="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_tags_def_items_def" />
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_tags_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_tags_def" />
+      <number name="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_confidence_def" />
+      <boolean name="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_isCustom_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_instances_def_items_def_instanceSource_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_instances_def_items_def_start_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_instances_def_items_def_end_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_instances_def_items_def">
+        <property name="instanceSource" type="string" />
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_instances_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_instances_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def">
+        <property name="id" type="integer" />
+        <property name="name" type="string" />
+        <property name="referenceId" type="string" />
+        <property name="referenceUrl" type="string" />
+        <property name="description" type="string" />
+        <property name="tags" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_tags_def" />
+        <property name="confidence" type="number" />
+        <property name="isCustom" type="boolean" />
+        <property name="instances" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_instances_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_audioEffects_def_items_def_id_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_audioEffects_def_items_def_type_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_audioEffects_def_items_def_instances_def_items_def_confidence_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_audioEffects_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_audioEffects_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_audioEffects_def_items_def_instances_def_items_def_start_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_audioEffects_def_items_def_instances_def_items_def_end_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_audioEffects_def_items_def_instances_def_items_def">
+        <property name="confidence" type="integer" />
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_audioEffects_def_items_def_instances_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_audioEffects_def_items_def_instances_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_audioEffects_def_items_def">
+        <property name="id" type="integer" />
+        <property name="type" type="string" />
+        <property name="instances" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_audioEffects_def_items_def_instances_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_audioEffects_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_audioEffects_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def_id_def" />
+      <number name="FromFileName_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def_averageScore_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def_sentimentType_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def_instances_def_items_def_start_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def_instances_def_items_def_end_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def_instances_def_items_def">
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def_instances_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def_instances_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def">
+        <property name="id" type="integer" />
+        <property name="averageScore" type="number" />
+        <property name="sentimentType" type="string" />
+        <property name="instances" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def_instances_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_sentiments_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_emotions_def_items_def_id_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_emotions_def_items_def_type_def" />
+      <number name="FromFileName_responses_default_def_videos_def_items_def_insights_def_emotions_def_items_def_instances_def_items_def_confidence_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_emotions_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_emotions_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_emotions_def_items_def_instances_def_items_def_start_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_emotions_def_items_def_instances_def_items_def_end_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_emotions_def_items_def_instances_def_items_def">
+        <property name="confidence" type="number" />
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_emotions_def_items_def_instances_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_emotions_def_items_def_instances_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_emotions_def_items_def">
+        <property name="id" type="integer" />
+        <property name="type" type="string" />
+        <property name="instances" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_emotions_def_items_def_instances_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_emotions_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_emotions_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_blocks_def_items_def_id_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_blocks_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_blocks_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_blocks_def_items_def_instances_def_items_def_start_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_blocks_def_items_def_instances_def_items_def_end_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_blocks_def_items_def_instances_def_items_def">
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_blocks_def_items_def_instances_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_blocks_def_items_def_instances_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_blocks_def_items_def">
+        <property name="id" type="integer" />
+        <property name="instances" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_blocks_def_items_def_instances_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_blocks_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_blocks_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def_id_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def_name_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def_instances_def_items_def_start_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def_instances_def_items_def_end_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def_instances_def_items_def">
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def_instances_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def_instances_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def">
+        <property name="id" type="integer" />
+        <property name="name" type="string" />
+        <property name="instances" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def_instances_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_speakers_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_textualContentModeration_def_id_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_textualContentModeration_def_bannedWordsCount_def" />
+      <number name="FromFileName_responses_default_def_videos_def_items_def_insights_def_textualContentModeration_def_bannedWordsRatio_def" />
+      <untypedObject name="FromFileName_responses_default_def_videos_def_items_def_insights_def_textualContentModeration_def_instances_def_items_def" />
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_textualContentModeration_def_instances_def_items_def" name="FromFileName_responses_default_def_videos_def_items_def_insights_def_textualContentModeration_def_instances_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_textualContentModeration_def">
+        <property name="id" type="integer" />
+        <property name="bannedWordsCount" type="integer" />
+        <property name="bannedWordsRatio" type="number" />
+        <property name="instances" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_textualContentModeration_def_instances_def" />
+      </object>
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_correspondenceCount_def" />
+      <number name="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerTalkToListenRatio_def_1_def" />
+      <number name="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerTalkToListenRatio_def_2_def" />
+      <number name="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerTalkToListenRatio_def_3_def" />
+      <number name="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerTalkToListenRatio_def_4_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerTalkToListenRatio_def">
+        <property name="1" type="number" />
+        <property name="2" type="number" />
+        <property name="3" type="number" />
+        <property name="4" type="number" />
+      </object>
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerLongestMonolog_def_1_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerLongestMonolog_def_2_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerLongestMonolog_def_3_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerLongestMonolog_def_4_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerLongestMonolog_def">
+        <property name="1" type="integer" />
+        <property name="2" type="integer" />
+        <property name="3" type="integer" />
+        <property name="4" type="integer" />
+      </object>
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerNumberOfFragments_def_1_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerNumberOfFragments_def_2_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerNumberOfFragments_def_3_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerNumberOfFragments_def_4_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerNumberOfFragments_def">
+        <property name="1" type="integer" />
+        <property name="2" type="integer" />
+        <property name="3" type="integer" />
+        <property name="4" type="integer" />
+      </object>
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerWordCount_def_1_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerWordCount_def_2_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerWordCount_def_3_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerWordCount_def_4_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerWordCount_def">
+        <property name="1" type="integer" />
+        <property name="2" type="integer" />
+        <property name="3" type="integer" />
+        <property name="4" type="integer" />
+      </object>
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def">
+        <property name="correspondenceCount" type="integer" />
+        <property name="speakerTalkToListenRatio" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerTalkToListenRatio_def" />
+        <property name="speakerLongestMonolog" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerLongestMonolog_def" />
+        <property name="speakerNumberOfFragments" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerNumberOfFragments_def" />
+        <property name="speakerWordCount" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerWordCount_def" />
+      </object>
+      <object name="FromFileName_responses_default_def_videos_def_items_def_insights_def">
+        <property name="version" type="string" />
+        <property name="duration" type="string" />
+        <property name="sourceLanguage" type="string" />
+        <property name="sourceLanguages" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_sourceLanguages_def" />
+        <property name="language" type="string" />
+        <property name="languages" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_languages_def" />
+        <property name="transcript" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_transcript_def" />
+        <property name="ocr" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_ocr_def" />
+        <property name="keywords" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_keywords_def" />
+        <property name="topics" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_topics_def" />
+        <property name="faces" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_faces_def" />
+        <property name="labels" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_labels_def" />
+        <property name="scenes" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_scenes_def" />
+        <property name="shots" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_shots_def" />
+        <property name="namedPeople" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_namedPeople_def" />
+        <property name="audioEffects" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_audioEffects_def" />
+        <property name="sentiments" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_sentiments_def" />
+        <property name="emotions" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_emotions_def" />
+        <property name="blocks" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_blocks_def" />
+        <property name="speakers" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_speakers_def" />
+        <property name="textualContentModeration" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_textualContentModeration_def" />
+        <property name="statistics" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def_statistics_def" />
+      </object>
+      <string name="FromFileName_responses_default_def_videos_def_items_def_thumbnailId_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_width_def" />
+      <integer name="FromFileName_responses_default_def_videos_def_items_def_height_def" />
+      <boolean name="FromFileName_responses_default_def_videos_def_items_def_detectSourceLanguage_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_languageAutoDetectMode_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_sourceLanguage_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_sourceLanguages_def_items_def" />
+      <array type="string" name="FromFileName_responses_default_def_videos_def_items_def_sourceLanguages_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_language_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_languages_def_items_def" />
+      <array type="string" name="FromFileName_responses_default_def_videos_def_items_def_languages_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_indexingPreset_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_linguisticModelId_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_personModelId_def" />
+      <boolean name="FromFileName_responses_default_def_videos_def_items_def_isAdult_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_publishedUrl_def" />
+      <string name="FromFileName_responses_default_def_videos_def_items_def_viewToken_def" />
+      <object name="FromFileName_responses_default_def_videos_def_items_def">
+        <property name="accountId" type="string" />
+        <property name="id" type="string" />
+        <property name="state" type="string" />
+        <property name="moderationState" type="string" />
+        <property name="reviewState" type="string" />
+        <property name="privacyMode" type="string" />
+        <property name="processingProgress" type="string" />
+        <property name="failureCode" type="string" />
+        <property name="failureMessage" type="string" />
+        <property name="insights" typeRef="FromFileName_responses_default_def_videos_def_items_def_insights_def" />
+        <property name="thumbnailId" type="string" />
+        <property name="width" type="integer" />
+        <property name="height" type="integer" />
+        <property name="detectSourceLanguage" type="boolean" />
+        <property name="languageAutoDetectMode" type="string" />
+        <property name="sourceLanguage" type="string" />
+        <property name="sourceLanguages" typeRef="FromFileName_responses_default_def_videos_def_items_def_sourceLanguages_def" />
+        <property name="language" type="string" />
+        <property name="languages" typeRef="FromFileName_responses_default_def_videos_def_items_def_languages_def" />
+        <property name="indexingPreset" type="string" />
+        <property name="linguisticModelId" type="string" />
+        <property name="personModelId" type="string" />
+        <property name="isAdult" type="boolean" />
+        <property name="publishedUrl" type="string" />
+        <property name="viewToken" type="string" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videos_def_items_def" name="FromFileName_responses_default_def_videos_def" />
+      <string name="FromFileName_responses_default_def_videosRanges_def_items_def_videoId_def" />
+      <string name="FromFileName_responses_default_def_videosRanges_def_items_def_range_def_start_def" />
+      <string name="FromFileName_responses_default_def_videosRanges_def_items_def_range_def_end_def" />
+      <object name="FromFileName_responses_default_def_videosRanges_def_items_def_range_def">
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <object name="FromFileName_responses_default_def_videosRanges_def_items_def">
+        <property name="videoId" type="string" />
+        <property name="range" typeRef="FromFileName_responses_default_def_videosRanges_def_items_def_range_def" />
+      </object>
+      <array typeRef="FromFileName_responses_default_def_videosRanges_def_items_def" name="FromFileName_responses_default_def_videosRanges_def" />
+      <object name="FromFileName_responses_default_def">
+        <property name="privacyMode" type="string" />
+        <property name="state" type="string" />
+        <property name="accountId" type="string" />
+        <property name="id" type="string" />
+        <property name="name" type="string" />
+        <property name="userName" type="string" />
+        <property name="created" type="string" />
+        <property name="isOwned" type="boolean" />
+        <property name="isEditable" type="boolean" />
+        <property name="isBase" type="boolean" />
+        <property name="durationInSeconds" type="integer" />
+        <property name="duration" type="string" />
+        <property name="summarizedInsights" typeRef="FromFileName_responses_default_def_summarizedInsights_def" />
+        <property name="videos" typeRef="FromFileName_responses_default_def_videos_def" />
+        <property name="videosRanges" typeRef="FromFileName_responses_default_def_videosRanges_def" />
+      </object>
+      <string name="GetDefaultResponse_responses_default_def_privacyMode_def" />
+      <string name="GetDefaultResponse_responses_default_def_state_def" />
+      <string name="GetDefaultResponse_responses_default_def_accountId_def" />
+      <string name="GetDefaultResponse_responses_default_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_name_def" />
+      <string name="GetDefaultResponse_responses_default_def_userName_def" />
+      <string name="GetDefaultResponse_responses_default_def_created_def" />
+      <boolean name="GetDefaultResponse_responses_default_def_isOwned_def" />
+      <boolean name="GetDefaultResponse_responses_default_def_isEditable_def" />
+      <boolean name="GetDefaultResponse_responses_default_def_isBase_def" />
+      <integer name="GetDefaultResponse_responses_default_def_durationInSeconds_def" />
+      <string name="GetDefaultResponse_responses_default_def_duration_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_name_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_privacyMode_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_duration_def_time_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_duration_def_seconds_def" />
+      <object name="GetDefaultResponse_responses_default_def_summarizedInsights_def_duration_def">
+        <property name="time" type="string" />
+        <property name="seconds" type="number" />
+      </object>
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_thumbnailVideoId_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_thumbnailId_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_faces_def_items_def_videoId_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_faces_def_items_def_confidence_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_faces_def_items_def_description_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_faces_def_items_def_title_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_faces_def_items_def_thumbnailId_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_faces_def_items_def_seenDuration_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_faces_def_items_def_seenDurationRatio_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_faces_def_items_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_faces_def_items_def_name_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_faces_def_items_def_appearances_def_items_def_startTime_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_faces_def_items_def_appearances_def_items_def_endTime_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_faces_def_items_def_appearances_def_items_def_startSeconds_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_faces_def_items_def_appearances_def_items_def_endSeconds_def" />
+      <object name="GetDefaultResponse_responses_default_def_summarizedInsights_def_faces_def_items_def_appearances_def_items_def">
+        <property name="startTime" type="string" />
+        <property name="endTime" type="string" />
+        <property name="startSeconds" type="number" />
+        <property name="endSeconds" type="number" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_faces_def_items_def_appearances_def_items_def" name="GetDefaultResponse_responses_default_def_summarizedInsights_def_faces_def_items_def_appearances_def" />
+      <object name="GetDefaultResponse_responses_default_def_summarizedInsights_def_faces_def_items_def">
+        <property name="videoId" type="string" />
+        <property name="confidence" type="integer" />
+        <property name="description" type="string" />
+        <property name="title" type="string" />
+        <property name="thumbnailId" type="string" />
+        <property name="seenDuration" type="number" />
+        <property name="seenDurationRatio" type="number" />
+        <property name="id" type="integer" />
+        <property name="name" type="string" />
+        <property name="appearances" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_faces_def_items_def_appearances_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_faces_def_items_def" name="GetDefaultResponse_responses_default_def_summarizedInsights_def_faces_def" />
+      <boolean name="GetDefaultResponse_responses_default_def_summarizedInsights_def_keywords_def_items_def_isTranscript_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_keywords_def_items_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_keywords_def_items_def_name_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_keywords_def_items_def_appearances_def_items_def_startTime_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_keywords_def_items_def_appearances_def_items_def_endTime_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_keywords_def_items_def_appearances_def_items_def_startSeconds_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_keywords_def_items_def_appearances_def_items_def_endSeconds_def" />
+      <object name="GetDefaultResponse_responses_default_def_summarizedInsights_def_keywords_def_items_def_appearances_def_items_def">
+        <property name="startTime" type="string" />
+        <property name="endTime" type="string" />
+        <property name="startSeconds" type="number" />
+        <property name="endSeconds" type="number" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_keywords_def_items_def_appearances_def_items_def" name="GetDefaultResponse_responses_default_def_summarizedInsights_def_keywords_def_items_def_appearances_def" />
+      <object name="GetDefaultResponse_responses_default_def_summarizedInsights_def_keywords_def_items_def">
+        <property name="isTranscript" type="boolean" />
+        <property name="id" type="integer" />
+        <property name="name" type="string" />
+        <property name="appearances" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_keywords_def_items_def_appearances_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_keywords_def_items_def" name="GetDefaultResponse_responses_default_def_summarizedInsights_def_keywords_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_sentiments_def_items_def_sentimentKey_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_sentiments_def_items_def_seenDurationRatio_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_sentiments_def_items_def_appearances_def_items_def_startTime_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_sentiments_def_items_def_appearances_def_items_def_endTime_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_sentiments_def_items_def_appearances_def_items_def_startSeconds_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_sentiments_def_items_def_appearances_def_items_def_endSeconds_def" />
+      <object name="GetDefaultResponse_responses_default_def_summarizedInsights_def_sentiments_def_items_def_appearances_def_items_def">
+        <property name="startTime" type="string" />
+        <property name="endTime" type="string" />
+        <property name="startSeconds" type="integer" />
+        <property name="endSeconds" type="number" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_sentiments_def_items_def_appearances_def_items_def" name="GetDefaultResponse_responses_default_def_summarizedInsights_def_sentiments_def_items_def_appearances_def" />
+      <object name="GetDefaultResponse_responses_default_def_summarizedInsights_def_sentiments_def_items_def">
+        <property name="sentimentKey" type="string" />
+        <property name="seenDurationRatio" type="number" />
+        <property name="appearances" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_sentiments_def_items_def_appearances_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_sentiments_def_items_def" name="GetDefaultResponse_responses_default_def_summarizedInsights_def_sentiments_def" />
+      <untypedObject name="GetDefaultResponse_responses_default_def_summarizedInsights_def_emotions_def_items_def" />
+      <array typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_emotions_def_items_def" name="GetDefaultResponse_responses_default_def_summarizedInsights_def_emotions_def" />
+      <untypedObject name="GetDefaultResponse_responses_default_def_summarizedInsights_def_audioEffects_def_items_def" />
+      <array typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_audioEffects_def_items_def" name="GetDefaultResponse_responses_default_def_summarizedInsights_def_audioEffects_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_labels_def_items_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_labels_def_items_def_name_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_labels_def_items_def_appearances_def_items_def_confidence_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_labels_def_items_def_appearances_def_items_def_startTime_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_labels_def_items_def_appearances_def_items_def_endTime_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_labels_def_items_def_appearances_def_items_def_startSeconds_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_labels_def_items_def_appearances_def_items_def_endSeconds_def" />
+      <object name="GetDefaultResponse_responses_default_def_summarizedInsights_def_labels_def_items_def_appearances_def_items_def">
+        <property name="confidence" type="number" />
+        <property name="startTime" type="string" />
+        <property name="endTime" type="string" />
+        <property name="startSeconds" type="integer" />
+        <property name="endSeconds" type="integer" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_labels_def_items_def_appearances_def_items_def" name="GetDefaultResponse_responses_default_def_summarizedInsights_def_labels_def_items_def_appearances_def" />
+      <object name="GetDefaultResponse_responses_default_def_summarizedInsights_def_labels_def_items_def">
+        <property name="id" type="integer" />
+        <property name="name" type="string" />
+        <property name="appearances" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_labels_def_items_def_appearances_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_labels_def_items_def" name="GetDefaultResponse_responses_default_def_summarizedInsights_def_labels_def" />
+      <untypedObject name="GetDefaultResponse_responses_default_def_summarizedInsights_def_framePatterns_def_items_def" />
+      <array typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_framePatterns_def_items_def" name="GetDefaultResponse_responses_default_def_summarizedInsights_def_framePatterns_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_brands_def_items_def_referenceId_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_brands_def_items_def_referenceUrl_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_brands_def_items_def_confidence_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_brands_def_items_def_description_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_brands_def_items_def_seenDuration_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_brands_def_items_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_brands_def_items_def_name_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_brands_def_items_def_appearances_def_items_def_startTime_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_brands_def_items_def_appearances_def_items_def_endTime_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_brands_def_items_def_appearances_def_items_def_startSeconds_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_brands_def_items_def_appearances_def_items_def_endSeconds_def" />
+      <object name="GetDefaultResponse_responses_default_def_summarizedInsights_def_brands_def_items_def_appearances_def_items_def">
+        <property name="startTime" type="string" />
+        <property name="endTime" type="string" />
+        <property name="startSeconds" type="number" />
+        <property name="endSeconds" type="number" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_brands_def_items_def_appearances_def_items_def" name="GetDefaultResponse_responses_default_def_summarizedInsights_def_brands_def_items_def_appearances_def" />
+      <object name="GetDefaultResponse_responses_default_def_summarizedInsights_def_brands_def_items_def">
+        <property name="referenceId" type="string" />
+        <property name="referenceUrl" type="string" />
+        <property name="confidence" type="number" />
+        <property name="description" type="string" />
+        <property name="seenDuration" type="number" />
+        <property name="id" type="integer" />
+        <property name="name" type="string" />
+        <property name="appearances" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_brands_def_items_def_appearances_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_brands_def_items_def" name="GetDefaultResponse_responses_default_def_summarizedInsights_def_brands_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedLocations_def_items_def_referenceId_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedLocations_def_items_def_referenceUrl_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedLocations_def_items_def_confidence_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedLocations_def_items_def_description_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedLocations_def_items_def_seenDuration_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedLocations_def_items_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedLocations_def_items_def_name_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedLocations_def_items_def_appearances_def_items_def_startTime_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedLocations_def_items_def_appearances_def_items_def_endTime_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedLocations_def_items_def_appearances_def_items_def_startSeconds_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedLocations_def_items_def_appearances_def_items_def_endSeconds_def" />
+      <object name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedLocations_def_items_def_appearances_def_items_def">
+        <property name="startTime" type="string" />
+        <property name="endTime" type="string" />
+        <property name="startSeconds" type="number" />
+        <property name="endSeconds" type="number" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedLocations_def_items_def_appearances_def_items_def" name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedLocations_def_items_def_appearances_def" />
+      <object name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedLocations_def_items_def">
+        <property name="referenceId" type="string" />
+        <property name="referenceUrl" type="string" />
+        <property name="confidence" type="number" />
+        <property name="description" type="string" />
+        <property name="seenDuration" type="number" />
+        <property name="id" type="integer" />
+        <property name="name" type="string" />
+        <property name="appearances" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedLocations_def_items_def_appearances_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedLocations_def_items_def" name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedLocations_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_referenceId_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_referenceUrl_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_confidence_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_description_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_seenDuration_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_name_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_appearances_def_items_def_startTime_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_appearances_def_items_def_endTime_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_appearances_def_items_def_startSeconds_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_appearances_def_items_def_endSeconds_def" />
+      <object name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_appearances_def_items_def">
+        <property name="startTime" type="string" />
+        <property name="endTime" type="string" />
+        <property name="startSeconds" type="integer" />
+        <property name="endSeconds" type="integer" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_appearances_def_items_def" name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_appearances_def" />
+      <object name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedPeople_def_items_def">
+        <property name="referenceId" type="string" />
+        <property name="referenceUrl" type="string" />
+        <property name="confidence" type="number" />
+        <property name="description" type="string" />
+        <property name="seenDuration" type="integer" />
+        <property name="id" type="integer" />
+        <property name="name" type="string" />
+        <property name="appearances" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedPeople_def_items_def_appearances_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedPeople_def_items_def" name="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedPeople_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_correspondenceCount_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerTalkToListenRatio_def_1_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerTalkToListenRatio_def_2_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerTalkToListenRatio_def_3_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerTalkToListenRatio_def_4_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerTalkToListenRatio_def_5_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerTalkToListenRatio_def_6_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerTalkToListenRatio_def_7_def" />
+      <object name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerTalkToListenRatio_def">
+        <property name="1" type="number" />
+        <property name="2" type="number" />
+        <property name="3" type="number" />
+        <property name="4" type="number" />
+        <property name="5" type="number" />
+        <property name="6" type="number" />
+        <property name="7" type="number" />
+      </object>
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerLongestMonolog_def_1_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerLongestMonolog_def_2_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerLongestMonolog_def_3_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerLongestMonolog_def_4_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerLongestMonolog_def_5_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerLongestMonolog_def_6_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerLongestMonolog_def_7_def" />
+      <object name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerLongestMonolog_def">
+        <property name="1" type="integer" />
+        <property name="2" type="integer" />
+        <property name="3" type="integer" />
+        <property name="4" type="integer" />
+        <property name="5" type="integer" />
+        <property name="6" type="integer" />
+        <property name="7" type="integer" />
+      </object>
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerNumberOfFragments_def_1_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerNumberOfFragments_def_2_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerNumberOfFragments_def_3_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerNumberOfFragments_def_4_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerNumberOfFragments_def_5_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerNumberOfFragments_def_6_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerNumberOfFragments_def_7_def" />
+      <object name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerNumberOfFragments_def">
+        <property name="1" type="integer" />
+        <property name="2" type="integer" />
+        <property name="3" type="integer" />
+        <property name="4" type="integer" />
+        <property name="5" type="integer" />
+        <property name="6" type="integer" />
+        <property name="7" type="integer" />
+      </object>
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerWordCount_def_1_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerWordCount_def_2_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerWordCount_def_3_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerWordCount_def_4_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerWordCount_def_5_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerWordCount_def_6_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerWordCount_def_7_def" />
+      <object name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerWordCount_def">
+        <property name="1" type="integer" />
+        <property name="2" type="integer" />
+        <property name="3" type="integer" />
+        <property name="4" type="integer" />
+        <property name="5" type="integer" />
+        <property name="6" type="integer" />
+        <property name="7" type="integer" />
+      </object>
+      <object name="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def">
+        <property name="correspondenceCount" type="integer" />
+        <property name="speakerTalkToListenRatio" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerTalkToListenRatio_def" />
+        <property name="speakerLongestMonolog" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerLongestMonolog_def" />
+        <property name="speakerNumberOfFragments" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerNumberOfFragments_def" />
+        <property name="speakerWordCount" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def_speakerWordCount_def" />
+      </object>
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_topics_def_items_def_referenceUrl_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_topics_def_items_def_iptcName_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_topics_def_items_def_iabName_def" />
+      <number name="GetDefaultResponse_responses_default_def_summarizedInsights_def_topics_def_items_def_confidence_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_topics_def_items_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_topics_def_items_def_name_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_topics_def_items_def_appearances_def_items_def_startTime_def" />
+      <string name="GetDefaultResponse_responses_default_def_summarizedInsights_def_topics_def_items_def_appearances_def_items_def_endTime_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_topics_def_items_def_appearances_def_items_def_startSeconds_def" />
+      <integer name="GetDefaultResponse_responses_default_def_summarizedInsights_def_topics_def_items_def_appearances_def_items_def_endSeconds_def" />
+      <object name="GetDefaultResponse_responses_default_def_summarizedInsights_def_topics_def_items_def_appearances_def_items_def">
+        <property name="startTime" type="string" />
+        <property name="endTime" type="string" />
+        <property name="startSeconds" type="integer" />
+        <property name="endSeconds" type="integer" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_topics_def_items_def_appearances_def_items_def" name="GetDefaultResponse_responses_default_def_summarizedInsights_def_topics_def_items_def_appearances_def" />
+      <object name="GetDefaultResponse_responses_default_def_summarizedInsights_def_topics_def_items_def">
+        <property name="referenceUrl" type="string" />
+        <property name="iptcName" type="string" />
+        <property name="iabName" type="string" />
+        <property name="confidence" type="number" />
+        <property name="id" type="integer" />
+        <property name="name" type="string" />
+        <property name="appearances" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_topics_def_items_def_appearances_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_topics_def_items_def" name="GetDefaultResponse_responses_default_def_summarizedInsights_def_topics_def" />
+      <object name="GetDefaultResponse_responses_default_def_summarizedInsights_def">
+        <property name="name" type="string" />
+        <property name="id" type="string" />
+        <property name="privacyMode" type="string" />
+        <property name="duration" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_duration_def" />
+        <property name="thumbnailVideoId" type="string" />
+        <property name="thumbnailId" type="string" />
+        <property name="faces" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_faces_def" />
+        <property name="keywords" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_keywords_def" />
+        <property name="sentiments" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_sentiments_def" />
+        <property name="emotions" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_emotions_def" />
+        <property name="audioEffects" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_audioEffects_def" />
+        <property name="labels" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_labels_def" />
+        <property name="framePatterns" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_framePatterns_def" />
+        <property name="brands" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_brands_def" />
+        <property name="namedLocations" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedLocations_def" />
+        <property name="namedPeople" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_namedPeople_def" />
+        <property name="statistics" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_statistics_def" />
+        <property name="topics" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def_topics_def" />
+      </object>
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_accountId_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_state_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_moderationState_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_reviewState_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_privacyMode_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_processingProgress_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_failureCode_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_failureMessage_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_version_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_duration_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_sourceLanguage_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_sourceLanguages_def_items_def" />
+      <array type="string" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_sourceLanguages_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_language_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_languages_def_items_def" />
+      <array type="string" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_languages_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_text_def" />
+      <number name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_confidence_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_speakerId_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_language_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_instances_def_items_def_start_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_instances_def_items_def_end_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_instances_def_items_def">
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_instances_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_instances_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def">
+        <property name="id" type="integer" />
+        <property name="text" type="string" />
+        <property name="confidence" type="number" />
+        <property name="speakerId" type="integer" />
+        <property name="language" type="string" />
+        <property name="instances" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def_instances_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_transcript_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_transcript_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_text_def" />
+      <number name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_confidence_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_left_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_top_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_width_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_height_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_angle_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_language_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_instances_def_items_def_start_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_instances_def_items_def_end_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_instances_def_items_def">
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_instances_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_instances_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def">
+        <property name="id" type="integer" />
+        <property name="text" type="string" />
+        <property name="confidence" type="number" />
+        <property name="left" type="integer" />
+        <property name="top" type="integer" />
+        <property name="width" type="integer" />
+        <property name="height" type="integer" />
+        <property name="angle" type="integer" />
+        <property name="language" type="string" />
+        <property name="instances" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def_instances_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_ocr_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_ocr_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_text_def" />
+      <number name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_confidence_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_language_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_instances_def_items_def_start_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_instances_def_items_def_end_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_instances_def_items_def">
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_instances_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_instances_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def">
+        <property name="id" type="integer" />
+        <property name="text" type="string" />
+        <property name="confidence" type="number" />
+        <property name="language" type="string" />
+        <property name="instances" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def_instances_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_keywords_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_keywords_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_name_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_referenceId_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_referenceType_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_iptcName_def" />
+      <number name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_confidence_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_iabName_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_language_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_instances_def_items_def_start_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_instances_def_items_def_end_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_instances_def_items_def">
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_instances_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_instances_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_referenceUrl_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def">
+        <property name="id" type="integer" />
+        <property name="name" type="string" />
+        <property name="referenceId" type="string" />
+        <property name="referenceType" type="string" />
+        <property name="iptcName" type="string" />
+        <property name="confidence" type="number" />
+        <property name="iabName" type="string" />
+        <property name="language" type="string" />
+        <property name="instances" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def_instances_def" />
+        <property name="referenceUrl" type="string" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_topics_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_topics_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_name_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_confidence_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_description_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnailId_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_title_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_imageUrl_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def_fileName_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def_instances_def_items_def_start_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def_instances_def_items_def_end_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def_instances_def_items_def">
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def_instances_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def_instances_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def">
+        <property name="id" type="string" />
+        <property name="fileName" type="string" />
+        <property name="instances" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def_instances_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_instances_def_items_def_thumbnailsIds_def_items_def" />
+      <array type="string" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_instances_def_items_def_thumbnailsIds_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_instances_def_items_def_start_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_instances_def_items_def_end_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_instances_def_items_def">
+        <property name="thumbnailsIds" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_instances_def_items_def_thumbnailsIds_def" />
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_instances_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_instances_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def">
+        <property name="id" type="integer" />
+        <property name="name" type="string" />
+        <property name="confidence" type="integer" />
+        <property name="description" type="string" />
+        <property name="thumbnailId" type="string" />
+        <property name="title" type="string" />
+        <property name="imageUrl" type="string" />
+        <property name="thumbnails" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_thumbnails_def" />
+        <property name="instances" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def_instances_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_name_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_referenceId_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_language_def" />
+      <number name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_instances_def_items_def_confidence_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_instances_def_items_def_start_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_instances_def_items_def_end_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_instances_def_items_def">
+        <property name="confidence" type="number" />
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_instances_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_instances_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def">
+        <property name="id" type="integer" />
+        <property name="name" type="string" />
+        <property name="referenceId" type="string" />
+        <property name="language" type="string" />
+        <property name="instances" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def_instances_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_labels_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_labels_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_scenes_def_items_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_scenes_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_scenes_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_scenes_def_items_def_instances_def_items_def_start_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_scenes_def_items_def_instances_def_items_def_end_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_scenes_def_items_def_instances_def_items_def">
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_scenes_def_items_def_instances_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_scenes_def_items_def_instances_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_scenes_def_items_def">
+        <property name="id" type="integer" />
+        <property name="instances" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_scenes_def_items_def_instances_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_scenes_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_scenes_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_id_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def_instances_def_items_def_thumbnailId_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def_instances_def_items_def_start_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def_instances_def_items_def_end_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def_instances_def_items_def">
+        <property name="thumbnailId" type="string" />
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def_instances_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def_instances_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def">
+        <property name="id" type="integer" />
+        <property name="instances" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def_instances_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_instances_def_items_def_start_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_instances_def_items_def_end_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_instances_def_items_def">
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_instances_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_instances_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_tags_def_items_def" />
+      <array type="string" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_tags_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def">
+        <property name="id" type="integer" />
+        <property name="keyFrames" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_keyFrames_def" />
+        <property name="instances" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_instances_def" />
+        <property name="tags" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def_tags_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def_referenceType_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def_name_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def_referenceId_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def_referenceUrl_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def_description_def" />
+      <untypedObject name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def_tags_def_items_def" />
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def_tags_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def_tags_def" />
+      <number name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def_confidence_def" />
+      <boolean name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def_isCustom_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def_instances_def_items_def_brandType_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def_instances_def_items_def_instanceSource_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def_instances_def_items_def_start_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def_instances_def_items_def_end_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def_instances_def_items_def">
+        <property name="brandType" type="string" />
+        <property name="instanceSource" type="string" />
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def_instances_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def_instances_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def">
+        <property name="id" type="integer" />
+        <property name="referenceType" type="string" />
+        <property name="name" type="string" />
+        <property name="referenceId" type="string" />
+        <property name="referenceUrl" type="string" />
+        <property name="description" type="string" />
+        <property name="tags" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def_tags_def" />
+        <property name="confidence" type="number" />
+        <property name="isCustom" type="boolean" />
+        <property name="instances" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def_instances_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def_items_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def_items_def_name_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def_items_def_referenceId_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def_items_def_referenceUrl_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def_items_def_description_def" />
+      <untypedObject name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def_items_def_tags_def_items_def" />
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def_items_def_tags_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def_items_def_tags_def" />
+      <number name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def_items_def_confidence_def" />
+      <boolean name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def_items_def_isCustom_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def_items_def_instances_def_items_def_instanceSource_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def_items_def_instances_def_items_def_start_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def_items_def_instances_def_items_def_end_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def_items_def_instances_def_items_def">
+        <property name="instanceSource" type="string" />
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def_items_def_instances_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def_items_def_instances_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def_items_def">
+        <property name="id" type="integer" />
+        <property name="name" type="string" />
+        <property name="referenceId" type="string" />
+        <property name="referenceUrl" type="string" />
+        <property name="description" type="string" />
+        <property name="tags" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def_items_def_tags_def" />
+        <property name="confidence" type="number" />
+        <property name="isCustom" type="boolean" />
+        <property name="instances" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def_items_def_instances_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_name_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_referenceId_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_referenceUrl_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_description_def" />
+      <untypedObject name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_tags_def_items_def" />
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_tags_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_tags_def" />
+      <number name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_confidence_def" />
+      <boolean name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_isCustom_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_instances_def_items_def_instanceSource_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_instances_def_items_def_start_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_instances_def_items_def_end_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_instances_def_items_def">
+        <property name="instanceSource" type="string" />
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_instances_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_instances_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def">
+        <property name="id" type="integer" />
+        <property name="name" type="string" />
+        <property name="referenceId" type="string" />
+        <property name="referenceUrl" type="string" />
+        <property name="description" type="string" />
+        <property name="tags" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_tags_def" />
+        <property name="confidence" type="number" />
+        <property name="isCustom" type="boolean" />
+        <property name="instances" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def_instances_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def_id_def" />
+      <number name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def_averageScore_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def_sentimentType_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def_instances_def_items_def_start_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def_instances_def_items_def_end_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def_instances_def_items_def">
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def_instances_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def_instances_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def">
+        <property name="id" type="integer" />
+        <property name="averageScore" type="number" />
+        <property name="sentimentType" type="string" />
+        <property name="instances" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def_instances_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_sentiments_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_sentiments_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_blocks_def_items_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_blocks_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_blocks_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_blocks_def_items_def_instances_def_items_def_start_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_blocks_def_items_def_instances_def_items_def_end_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_blocks_def_items_def_instances_def_items_def">
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_blocks_def_items_def_instances_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_blocks_def_items_def_instances_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_blocks_def_items_def">
+        <property name="id" type="integer" />
+        <property name="instances" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_blocks_def_items_def_instances_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_blocks_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_blocks_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def_id_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def_name_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def_instances_def_items_def_adjustedStart_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def_instances_def_items_def_adjustedEnd_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def_instances_def_items_def_start_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def_instances_def_items_def_end_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def_instances_def_items_def">
+        <property name="adjustedStart" type="string" />
+        <property name="adjustedEnd" type="string" />
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def_instances_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def_instances_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def">
+        <property name="id" type="integer" />
+        <property name="name" type="string" />
+        <property name="instances" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def_instances_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_speakers_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_speakers_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_textualContentModeration_def_id_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_textualContentModeration_def_bannedWordsCount_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_textualContentModeration_def_bannedWordsRatio_def" />
+      <untypedObject name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_textualContentModeration_def_instances_def_items_def" />
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_textualContentModeration_def_instances_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_textualContentModeration_def_instances_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_textualContentModeration_def">
+        <property name="id" type="integer" />
+        <property name="bannedWordsCount" type="integer" />
+        <property name="bannedWordsRatio" type="integer" />
+        <property name="instances" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_textualContentModeration_def_instances_def" />
+      </object>
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_correspondenceCount_def" />
+      <number name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerTalkToListenRatio_def_1_def" />
+      <number name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerTalkToListenRatio_def_2_def" />
+      <number name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerTalkToListenRatio_def_3_def" />
+      <number name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerTalkToListenRatio_def_4_def" />
+      <number name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerTalkToListenRatio_def_5_def" />
+      <number name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerTalkToListenRatio_def_6_def" />
+      <number name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerTalkToListenRatio_def_7_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerTalkToListenRatio_def">
+        <property name="1" type="number" />
+        <property name="2" type="number" />
+        <property name="3" type="number" />
+        <property name="4" type="number" />
+        <property name="5" type="number" />
+        <property name="6" type="number" />
+        <property name="7" type="number" />
+      </object>
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerLongestMonolog_def_1_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerLongestMonolog_def_2_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerLongestMonolog_def_3_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerLongestMonolog_def_4_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerLongestMonolog_def_5_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerLongestMonolog_def_6_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerLongestMonolog_def_7_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerLongestMonolog_def">
+        <property name="1" type="integer" />
+        <property name="2" type="integer" />
+        <property name="3" type="integer" />
+        <property name="4" type="integer" />
+        <property name="5" type="integer" />
+        <property name="6" type="integer" />
+        <property name="7" type="integer" />
+      </object>
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerNumberOfFragments_def_1_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerNumberOfFragments_def_2_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerNumberOfFragments_def_3_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerNumberOfFragments_def_4_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerNumberOfFragments_def_5_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerNumberOfFragments_def_6_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerNumberOfFragments_def_7_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerNumberOfFragments_def">
+        <property name="1" type="integer" />
+        <property name="2" type="integer" />
+        <property name="3" type="integer" />
+        <property name="4" type="integer" />
+        <property name="5" type="integer" />
+        <property name="6" type="integer" />
+        <property name="7" type="integer" />
+      </object>
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerWordCount_def_1_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerWordCount_def_2_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerWordCount_def_3_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerWordCount_def_4_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerWordCount_def_5_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerWordCount_def_6_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerWordCount_def_7_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerWordCount_def">
+        <property name="1" type="integer" />
+        <property name="2" type="integer" />
+        <property name="3" type="integer" />
+        <property name="4" type="integer" />
+        <property name="5" type="integer" />
+        <property name="6" type="integer" />
+        <property name="7" type="integer" />
+      </object>
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def">
+        <property name="correspondenceCount" type="integer" />
+        <property name="speakerTalkToListenRatio" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerTalkToListenRatio_def" />
+        <property name="speakerLongestMonolog" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerLongestMonolog_def" />
+        <property name="speakerNumberOfFragments" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerNumberOfFragments_def" />
+        <property name="speakerWordCount" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def_speakerWordCount_def" />
+      </object>
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def">
+        <property name="version" type="string" />
+        <property name="duration" type="string" />
+        <property name="sourceLanguage" type="string" />
+        <property name="sourceLanguages" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_sourceLanguages_def" />
+        <property name="language" type="string" />
+        <property name="languages" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_languages_def" />
+        <property name="transcript" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_transcript_def" />
+        <property name="ocr" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_ocr_def" />
+        <property name="keywords" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_keywords_def" />
+        <property name="topics" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_topics_def" />
+        <property name="faces" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_faces_def" />
+        <property name="labels" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_labels_def" />
+        <property name="scenes" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_scenes_def" />
+        <property name="shots" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_shots_def" />
+        <property name="brands" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_brands_def" />
+        <property name="namedLocations" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedLocations_def" />
+        <property name="namedPeople" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_namedPeople_def" />
+        <property name="sentiments" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_sentiments_def" />
+        <property name="blocks" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_blocks_def" />
+        <property name="speakers" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_speakers_def" />
+        <property name="textualContentModeration" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_textualContentModeration_def" />
+        <property name="statistics" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def_statistics_def" />
+      </object>
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_thumbnailId_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_width_def" />
+      <integer name="GetDefaultResponse_responses_default_def_videos_def_items_def_height_def" />
+      <boolean name="GetDefaultResponse_responses_default_def_videos_def_items_def_detectSourceLanguage_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_languageAutoDetectMode_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_sourceLanguage_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_sourceLanguages_def_items_def" />
+      <array type="string" name="GetDefaultResponse_responses_default_def_videos_def_items_def_sourceLanguages_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_language_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_languages_def_items_def" />
+      <array type="string" name="GetDefaultResponse_responses_default_def_videos_def_items_def_languages_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_indexingPreset_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_linguisticModelId_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_personModelId_def" />
+      <boolean name="GetDefaultResponse_responses_default_def_videos_def_items_def_isAdult_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_publishedUrl_def" />
+      <string name="GetDefaultResponse_responses_default_def_videos_def_items_def_viewToken_def" />
+      <object name="GetDefaultResponse_responses_default_def_videos_def_items_def">
+        <property name="accountId" type="string" />
+        <property name="id" type="string" />
+        <property name="state" type="string" />
+        <property name="moderationState" type="string" />
+        <property name="reviewState" type="string" />
+        <property name="privacyMode" type="string" />
+        <property name="processingProgress" type="string" />
+        <property name="failureCode" type="string" />
+        <property name="failureMessage" type="string" />
+        <property name="insights" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_insights_def" />
+        <property name="thumbnailId" type="string" />
+        <property name="width" type="integer" />
+        <property name="height" type="integer" />
+        <property name="detectSourceLanguage" type="boolean" />
+        <property name="languageAutoDetectMode" type="string" />
+        <property name="sourceLanguage" type="string" />
+        <property name="sourceLanguages" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_sourceLanguages_def" />
+        <property name="language" type="string" />
+        <property name="languages" typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def_languages_def" />
+        <property name="indexingPreset" type="string" />
+        <property name="linguisticModelId" type="string" />
+        <property name="personModelId" type="string" />
+        <property name="isAdult" type="boolean" />
+        <property name="publishedUrl" type="string" />
+        <property name="viewToken" type="string" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videos_def_items_def" name="GetDefaultResponse_responses_default_def_videos_def" />
+      <string name="GetDefaultResponse_responses_default_def_videosRanges_def_items_def_videoId_def" />
+      <string name="GetDefaultResponse_responses_default_def_videosRanges_def_items_def_range_def_start_def" />
+      <string name="GetDefaultResponse_responses_default_def_videosRanges_def_items_def_range_def_end_def" />
+      <object name="GetDefaultResponse_responses_default_def_videosRanges_def_items_def_range_def">
+        <property name="start" type="string" />
+        <property name="end" type="string" />
+      </object>
+      <object name="GetDefaultResponse_responses_default_def_videosRanges_def_items_def">
+        <property name="videoId" type="string" />
+        <property name="range" typeRef="GetDefaultResponse_responses_default_def_videosRanges_def_items_def_range_def" />
+      </object>
+      <array typeRef="GetDefaultResponse_responses_default_def_videosRanges_def_items_def" name="GetDefaultResponse_responses_default_def_videosRanges_def" />
+      <object name="GetDefaultResponse_responses_default_def">
+        <property name="privacyMode" type="string" />
+        <property name="state" type="string" />
+        <property name="accountId" type="string" />
+        <property name="id" type="string" />
+        <property name="name" type="string" />
+        <property name="userName" type="string" />
+        <property name="created" type="string" />
+        <property name="isOwned" type="boolean" />
+        <property name="isEditable" type="boolean" />
+        <property name="isBase" type="boolean" />
+        <property name="durationInSeconds" type="integer" />
+        <property name="duration" type="string" />
+        <property name="summarizedInsights" typeRef="GetDefaultResponse_responses_default_def_summarizedInsights_def" />
+        <property name="videos" typeRef="GetDefaultResponse_responses_default_def_videos_def" />
+        <property name="videosRanges" typeRef="GetDefaultResponse_responses_default_def_videosRanges_def" />
+      </object>
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://msmanaged-na.azure-apim.net/apim/getsentimentresults-5fa03598a9320f38aa-5f15dbda3abd7d3151">
+    <resource path="/{connectionId}/insightstore/{filename}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="filename" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="FromFileName" actionName="FromFileName" siena:isDeprecated="false">
+        <doc title="Load JSON file from provided URL&#xA;Read JSON file from Azure Blob Storage" />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:FromFileName_responses_default_def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/insightstore/Condiment Challengeinsights-json">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="GetDefaultResponse" actionName="GetDefaultResponse" siena:isDeprecated="false">
+        <doc title="Get sample JSON result for the given insights&#xA;This is a sample JSON file for the insights" />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:GetDefaultResponse_responses_default_def" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_getsentimentresults-5fa03598a9320f38aa-5f15dbda3abd7d3151" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>

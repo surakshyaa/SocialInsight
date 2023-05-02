@@ -1,0 +1,249 @@
+InsightDetails As screen:
+    Fill: =
+
+    Icon12 As icon.BackArrow:
+        Color: =RGBA(255, 191, 0, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back(ScreenTransition.CoverRight)
+        X: =40
+        Y: =40
+        ZIndex: =1
+
+    "Gallery5 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
+        DelayItemLoading: =true
+        Height: =258
+        Items: =selectedInsightDetails.summarizedInsights.emotions
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =66
+        Width: =560
+        X: =51
+        Y: =563
+        ZIndex: =1
+
+        Title9 As label:
+            Height: =36
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =18
+            Text: =ThisItem.type
+            VerticalAlign: =VerticalAlign.Top
+            Width: =195
+            X: =32
+            Y: =16
+            ZIndex: =1
+
+        Subtitle9 As label:
+            Height: =36
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.seenDurationRatio
+            VerticalAlign: =VerticalAlign.Top
+            Width: =225
+            X: =309
+            Y: =16
+            ZIndex: =2
+
+        Separator8 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =4
+
+    "Gallery6 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
+        DelayItemLoading: =true
+        Height: =251
+        Items: =selectedInsightDetails.summarizedInsights.keywords
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =50
+        Width: =560
+        X: =51
+        Y: =863
+        ZIndex: =1
+
+        Title11 As label:
+            FontWeight: =FontWeight.Normal
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =18
+            Text: =ThisItem.name
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =30
+            Y: =14
+            ZIndex: =1
+
+        Separator10 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =3
+
+    Label9 As label:
+        Align: =Align.Center
+        Font: =Font.Georgia
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =21
+        Text: =selectedInsightDetails.name
+        Width: =560
+        X: =51
+        Y: =104
+        ZIndex: =2
+
+    Label11 As label:
+        Align: =Align.Center
+        Font: =Font.Georgia
+        Height: =44
+        Size: =16
+        Text: =selectedInsight.LastModified
+        Width: =560
+        X: =51
+        Y: =154
+        ZIndex: =3
+
+    Label14_2 As label:
+        Font: =Font.Georgia
+        FontWeight: =FontWeight.Bold
+        Height: =52
+        Size: =16
+        Text: ="Emotions"
+        Width: =164
+        X: =40
+        Y: =511
+        ZIndex: =8
+
+    Group1 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =8
+
+        Label12 As label:
+            Height: =48
+            Size: =16
+            Text: =selectedInsightDetails.duration
+            Width: =200
+            X: =170
+            Y: =214
+            ZIndex: =4
+
+        Label14 As label:
+            Font: =Font.Georgia
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =16
+            Text: |-
+                ="Duration : "
+            Width: =130
+            X: =40
+            Y: =212
+            ZIndex: =6
+
+    Group4 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =8
+
+        "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
+            DelayItemLoading: =true
+            Height: =207
+            Items: =selectedInsightDetails.summarizedInsights.sentiments
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =60
+            Width: =571
+            X: =40
+            Y: =304
+            ZIndex: =1
+
+            Title4 As label:
+                Height: =45
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =18
+                Text: =ThisItem.sentimentKey
+                VerticalAlign: =VerticalAlign.Top
+                Width: =247
+                X: =32
+                Y: =16
+                ZIndex: =1
+
+            Subtitle5 As label:
+                Height: =42
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.seenDurationRatio
+                VerticalAlign: =VerticalAlign.Top
+                Width: =123
+                X: =324
+                Y: =16
+                ZIndex: =2
+
+            Separator5 As rectangle:
+                Height: =1
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                Y: =Parent.TemplateHeight - 1
+                ZIndex: =4
+
+        Label14_1 As label:
+            Font: =Font.Georgia
+            FontWeight: =FontWeight.Bold
+            Height: =52
+            Size: =16
+            Text: ="Sentiments"
+            Width: =164
+            X: =40
+            Y: =252
+            ZIndex: =7
+
+    Label14_3 As label:
+        Font: =Font.Georgia
+        FontWeight: =FontWeight.Bold
+        Height: =52
+        Size: =16
+        Text: ="Keywords"
+        Width: =164
+        X: =40
+        Y: =821
+        ZIndex: =9
+
+    Label5 As label:
+        Align: =Align.Right
+        Color: =RGBA(255, 191, 0, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =60
+        OnSelect: =Navigate(InsightHelp, ScreenTransition.Cover);
+        Size: =18
+        Text: ="Learn More"
+        Width: =164
+        X: =446
+        Y: =500
+        ZIndex: =10
+

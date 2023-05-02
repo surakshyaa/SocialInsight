@@ -1,0 +1,146 @@
+Navbar As screen:
+
+    CloseButton As icon.CancelBadge:
+        BorderColor: =RGBA(255, 191, 0, 1)
+        Color: =RGBA(255, 191, 0, 1)
+        Icon: =Icon.CancelBadge
+        OnSelect: =Back(ScreenTransition.CoverRight)
+        X: =561
+        Y: =18
+        ZIndex: =2
+
+    Logout_Btn As button:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(255, 191, 0, 1)
+        Height: =100
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =ColorFade(RGBA(255, 191, 0, 1), -20%)
+        OnSelect: =Navigate(Login, ScreenTransition.CoverRight)
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Size: =24
+        Text: ="LOGOUT"
+        Width: =560
+        X: =48
+        Y: =1004
+        ZIndex: =6
+
+    Group3 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =9
+
+        FileIcon As icon.Database:
+            BorderColor: =RGBA(255, 191, 0, 1)
+            Color: =RGBA(255, 191, 0, 1)
+            Icon: =Icon.Database
+            X: =36
+            Y: =192
+            ZIndex: =3
+
+        Label3 As label:
+            Font: =Font.Georgia
+            Height: =64
+            Size: =26
+            Text: ="Files"
+            Width: =144
+            X: =128
+            Y: =192
+            ZIndex: =4
+
+        Button4 As button:
+            Color: =RGBA(214, 214, 214, 0.46)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =80
+            HoverFill: =ColorFade(RGBA(214, 214, 214, 0.25), -5%)
+            OnSelect: =Navigate(FilesScreen, ScreenTransition.CoverRight)
+            Size: =24
+            Text: =""
+            Width: =585
+            X: =23
+            Y: =182
+            ZIndex: =7
+
+    Group5 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =12
+
+        Icon11 As icon.Enhance:
+            Color: =RGBA(255, 191, 0, 1)
+            Height: =54
+            Icon: =Icon.Enhance
+            X: =48
+            Y: =314
+            ZIndex: =1
+
+        Label3_3 As label:
+            Font: =Font.Georgia
+            Height: =54
+            Size: =26
+            Text: ="Insights"
+            Width: =256
+            X: =128
+            Y: =314
+            ZIndex: =5
+
+        Button4_1 As button:
+            Color: =RGBA(214, 214, 214, 0.46)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =80
+            HoverFill: =ColorFade(RGBA(214, 214, 214, 0.25), -5%)
+            OnSelect: |-
+                =Set(insightFolder, "/insightstore");
+                ClearCollect(Insights, AzureBlobStorage.ListFolderV2("/insightstore").value);
+                Navigate(ListInsights, ScreenTransition.CoverRight);
+            Size: =24
+            Text: =""
+            Width: =585
+            X: =36
+            Y: =300
+            ZIndex: =8
+
+    Group4_1 As group:
+        Height: =5
+        Width: =5
+        X: =19
+        Y: =20
+        ZIndex: =12
+
+        UploadIcon_1 As icon.AddDocument:
+            Color: =RGBA(255, 191, 0, 1)
+            Icon: =Icon.AddDocument
+            X: =35
+            Y: =418
+            ZIndex: =9
+
+        Label3_4 As label:
+            Font: =Font.Georgia
+            Height: =64
+            Size: =26
+            Text: ="Upload Video"
+            Width: =256
+            X: =127
+            Y: =426
+            ZIndex: =10
+
+        Button4_2 As button:
+            Color: =RGBA(214, 214, 214, 0.46)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =80
+            HoverFill: =ColorFade(RGBA(214, 214, 214, 0.25), -5%)
+            OnSelect: =Navigate(UploadVideo, ScreenTransition.CoverRight)
+            Size: =24
+            Text: =""
+            Width: =585
+            X: =35
+            Y: =410
+            ZIndex: =11
+

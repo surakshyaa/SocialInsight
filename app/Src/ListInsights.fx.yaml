@@ -1,0 +1,104 @@
+ListInsights As screen:
+
+    "Gallery9_3 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
+        DelayItemLoading: =true
+        Height: =833
+        Items: =Insights
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        OnSelect: |-
+            =Set(selectedInsight, ThisItem);
+            Set(selectedInsightURL, AzureBlobStorage.CreateShareLinkByPath(ThisItem.Path).WebUrl);
+            Set(selectedInsightDetails, GetSentimentResults.FromFileName(ThisItem.DisplayName));
+            Navigate(InsightDetails, ScreenTransition.Cover);
+        TemplatePadding: =0
+        TemplateSize: =Min(104, Self.Height - 60)
+        Y: =199
+        ZIndex: =1
+
+        Title8 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.DisplayName
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =16
+            ZIndex: =1
+
+        Subtitle6 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.LastModified
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =Title8.Y + Title8.Height + 4
+            ZIndex: =2
+
+        Separator7 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =4
+
+        Icon10 As icon.Download:
+            Height: =36
+            Icon: =Icon.Download
+            OnSelect: =Launch(AzureBlobStorage.CreateShareLinkByPath(ThisItem.Path).WebUrl)
+            Width: =46
+            X: =568
+            Y: =34
+            ZIndex: =5
+
+    Label4_3 As label:
+        Fill: =RGBA(255, 191, 0, 1)
+        Font: =Font.Georgia
+        Height: =50
+        Size: =21
+        Text: ="Insights"
+        Width: =640
+        Y: =149
+        ZIndex: =8
+
+    Heading_4 As Heading:
+        ZIndex: =10
+
+    Icon7_3 As icon.Hamburger:
+        BorderColor: =RGBA(255, 191, 0, 1)
+        Color: =RGBA(255, 191, 0, 1)
+        Icon: =Icon.Hamburger
+        OnSelect: =Navigate(Navbar, ScreenTransition.Cover)
+        X: =565
+        Y: =5
+        ZIndex: =11
+
+    Button2 As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(255, 191, 0, 1)
+        Height: =46
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =Self.Fill
+        OnSelect: =ClearCollect(Insights, AzureBlobStorage.ListFolderV2("/insightstore").value);
+        PressedColor: =Self.Color
+        PressedFill: =Self.Fill
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Size: =16
+        Text: ="REFRESH"
+        Width: =140
+        X: =250
+        Y: =1075
+        ZIndex: =12
+

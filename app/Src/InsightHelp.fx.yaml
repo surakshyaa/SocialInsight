@@ -1,0 +1,90 @@
+"InsightHelp As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    OnVisible: =
+
+    "Gallery4 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        DelayItemLoading: =true
+        Height: =1036
+        Items: |-
+            =Table(
+                {
+                    Emotion: "Joy",
+                    Explaination: "The Joy emotion represents a positive emotional state characterized by feelings of happiness, pleasure, excitement, and delight.",
+                    Emoji: joy
+                },
+                 {
+                    Emotion: "Sadness",
+                    Explaination: "Sadness is typically an emotional state characterized by feelings of sorrow, melancholy, or grief.",
+                    Emoji: sad
+                },
+                 {
+                    Emotion: "Anger",
+                    Explaination: "Anger is a complex emotion that can be triggered by a wide range of factors, including frustration, perceived injustice, fear, or even physical pain.",
+                    Emoji: angry
+                },
+                 {
+                    Emotion: "Fear",
+                    Explaination: "Fear is a basic human emotion that is triggered by a perceived threat to one's safety, well-being, or survival.",
+                    Emoji: fear
+                }
+            
+            )
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =222
+        Y: =100
+        ZIndex: =1
+
+        Image4 As image:
+            Height: =128
+            Image: =ThisItem.Emoji
+            OnSelect: =Select(Parent)
+            Width: =128
+            X: =18
+            Y: =16
+            ZIndex: =1
+
+        Title3 As label:
+            Font: =Font.Georgia
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Emotion
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - Image4.Width - 104
+            X: =Image4.X + Image4.Width + 24
+            Y: =16
+            ZIndex: =2
+
+        Subtitle3 As label:
+            Height: =158
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Explaination
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title3.Width
+            X: =Title3.X
+            Y: =Title3.Y + Title3.Height + 4
+            ZIndex: =3
+
+        Separator3 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+    Icon12_1 As icon.BackArrow:
+        Color: =RGBA(255, 191, 0, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back(ScreenTransition.CoverRight)
+        X: =40
+        Y: =40
+        ZIndex: =2
+
